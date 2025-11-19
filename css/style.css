@@ -6,21 +6,21 @@
 }
 
 :root {
-    --primary-blue: #2563EB;
-    --primary-dark: #1E40AF;
-    --accent-orange: #F97316;
-    --neutral-light: #F3F4F6;
-    --neutral-dark: #1F2937;
-    --text-primary: #111827;
-    --text-secondary: #6B7280;
+    --burnt-orange: #CC5A1A;
+    --deep-olive: #556B2F;
+    --warm-beige: #F5E8D3;
+    --white-ivory: #F2EFDF;
+    --charcoal-text: #333333;
     --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    --medium-gray: #999999;
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: var(--text-primary);
-    background-color: var(--white);
+    color: var(--charcoal-text);
+    background-color: var(--white-ivory);
 }
 
 html {
@@ -36,7 +36,7 @@ html {
 /* Navigation */
 .navbar {
     background: var(--white);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(85, 107, 47, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -54,43 +54,50 @@ html {
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--deep-olive);
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-logo a:hover {
+    color: var(--burnt-orange);
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--charcoal-text);
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: var(--primary-blue);
+    color: var(--burnt-orange);
 }
 
 .nav-cta {
-    background: var(--primary-blue);
+    background: var(--burnt-orange);
     color: var(--white) !important;
     padding: 0.5rem 1.5rem;
     border-radius: 6px;
-    transition: background 0.3s;
+    transition: all 0.3s;
 }
 
 .nav-cta:hover {
-    background: var(--primary-dark);
+    background: #B34E14;
+    transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--deep-olive) 0%, var(--charcoal-text) 100%);
     color: var(--white);
     padding: 6rem 0;
     text-align: center;
@@ -105,11 +112,18 @@ html {
 
 .hero-subtitle {
     font-size: 1.25rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Buttons */
@@ -124,31 +138,34 @@ html {
 }
 
 .btn-primary {
-    background: var(--accent-orange);
+    background: var(--burnt-orange);
     color: var(--white);
+    border: 2px solid var(--burnt-orange);
 }
 
 .btn-primary:hover {
-    background: #EA580C;
+    background: #B34E14;
+    border-color: #B34E14;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 4px 12px rgba(204, 90, 26, 0.4);
 }
 
 .btn-secondary {
     background: transparent;
-    border: 2px solid var(--primary-blue);
-    color: var(--primary-blue);
+    border: 2px solid var(--deep-olive);
+    color: var(--deep-olive);
 }
 
 .btn-secondary:hover {
-    background: var(--primary-blue);
+    background: var(--deep-olive);
     color: var(--white);
+    transform: translateY(-2px);
 }
 
 /* Stats Section */
 .stats {
     padding: 4rem 0;
-    background: var(--neutral-light);
+    background: var(--warm-beige);
 }
 
 .stats-grid {
@@ -162,12 +179,13 @@ html {
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 2px 8px rgba(85, 107, 47, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .stat-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(85, 107, 47, 0.15);
 }
 
 .stat-icon {
@@ -178,7 +196,7 @@ html {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--burnt-orange);
     margin-bottom: 0.5rem;
 }
 
@@ -186,11 +204,13 @@ html {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    color: var(--deep-olive);
 }
 
 .stat-description {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--charcoal-text);
+    opacity: 0.8;
 }
 
 /* Section Styles */
@@ -199,19 +219,22 @@ html {
     font-weight: 700;
     text-align: center;
     margin-bottom: 1rem;
+    color: var(--deep-olive);
 }
 
 .section-subtitle {
     text-align: center;
-    color: var(--text-secondary);
+    color: var(--charcoal-text);
     max-width: 700px;
     margin: 0 auto 3rem;
     font-size: 1.1rem;
+    opacity: 0.9;
 }
 
 /* Case Studies Section */
 .case-studies {
     padding: 5rem 0;
+    background: var(--white-ivory);
 }
 
 .case-studies-grid {
@@ -222,20 +245,21 @@ html {
 
 .case-study-card {
     background: var(--white);
-    border: 2px solid var(--neutral-light);
+    border: 2px solid var(--warm-beige);
     border-radius: 12px;
     padding: 2.5rem;
     transition: all 0.3s;
 }
 
 .case-study-card:hover {
-    border-color: var(--primary-blue);
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+    border-color: var(--burnt-orange);
+    box-shadow: 0 8px 24px rgba(204, 90, 26, 0.15);
+    transform: translateY(-5px);
 }
 
 .case-badge {
     display: inline-block;
-    background: var(--primary-blue);
+    background: var(--deep-olive);
     color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -247,13 +271,14 @@ html {
 .case-study-card h3 {
     font-size: 1.75rem;
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    color: var(--charcoal-text);
 }
 
 .case-description {
-    color: var(--text-secondary);
+    color: var(--charcoal-text);
     margin-bottom: 1.5rem;
     line-height: 1.7;
+    opacity: 0.9;
 }
 
 .case-details {
@@ -264,15 +289,15 @@ html {
 }
 
 .case-tag {
-    background: var(--neutral-light);
+    background: var(--warm-beige);
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     font-size: 0.85rem;
-    color: var(--text-primary);
+    color: var(--charcoal-text);
 }
 
 .case-highlights {
-    background: var(--neutral-light);
+    background: var(--warm-beige);
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
@@ -288,13 +313,199 @@ html {
 }
 
 .highlight-item strong {
-    color: var(--primary-blue);
+    color: var(--burnt-orange);
+}
+
+/* Automation Section */
+.automation-section {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.automation-impact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.impact-card {
+    background: var(--warm-beige);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.impact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.impact-stat {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--burnt-orange);
+    margin-bottom: 0.5rem;
+}
+
+.impact-label {
+    font-size: 1rem;
+    color: var(--charcoal-text);
+}
+
+/* Workflow Cards */
+.workflows-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.workflow-card {
+    background: var(--white);
+    border: 2px solid var(--warm-beige);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s;
+}
+
+.workflow-card:hover {
+    border-color: var(--deep-olive);
+    box-shadow: 0 8px 24px rgba(85, 107, 47, 0.15);
+    transform: translateY(-5px);
+}
+
+.workflow-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.workflow-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--burnt-orange);
+}
+
+.workflow-priority {
+    background: var(--deep-olive);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.workflow-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--charcoal-text);
+}
+
+.workflow-description {
+    color: var(--charcoal-text);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.workflow-tech {
+    margin-bottom: 1rem;
+}
+
+.workflow-tech strong {
+    color: var(--deep-olive);
+    font-size: 0.9rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tech-tags span {
+    background: var(--warm-beige);
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--charcoal-text);
+}
+
+.workflow-features {
+    background: var(--white-ivory);
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.feature-item {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--charcoal-text);
+}
+
+.feature-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Technical Capabilities */
+.tech-capabilities {
+    background: var(--warm-beige);
+    padding: 3rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+}
+
+.tech-capabilities h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--deep-olive);
+}
+
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.capability-column h4 {
+    color: var(--burnt-orange);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.capability-column ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.capability-column li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.capability-column li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--burnt-orange);
+    font-weight: bold;
+}
+
+.github-cta {
+    text-align: center;
 }
 
 /* Skills Section */
 .skills {
     padding: 5rem 0;
-    background: var(--neutral-light);
+    background: var(--white-ivory);
 }
 
 .skills-grid {
@@ -308,11 +519,14 @@ html {
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid var(--warm-beige);
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
+    border-color: var(--burnt-orange);
+    box-shadow: 0 8px 16px rgba(204, 90, 26, 0.15);
 }
 
 .skill-icon {
@@ -323,19 +537,20 @@ html {
 .skill-card h3 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
-    color: var(--primary-blue);
+    color: var(--deep-olive);
 }
 
 .skill-card p {
-    color: var(--text-secondary);
+    color: var(--charcoal-text);
     font-size: 0.95rem;
+    opacity: 0.9;
 }
 
 /* CTA Section */
 .cta {
     padding: 5rem 0;
     text-align: center;
-    background: var(--primary-blue);
+    background: var(--deep-olive);
     color: var(--white);
 }
 
@@ -347,12 +562,12 @@ html {
 .cta p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 /* Footer */
 .footer {
-    background: var(--neutral-dark);
+    background: var(--charcoal-text);
     color: var(--white);
     padding: 3rem 0 2rem;
 }
@@ -374,6 +589,7 @@ html {
     font-size: 0.85rem;
     opacity: 0.7;
     font-style: italic;
+    max-width: 700px;
 }
 
 .footer-right {
@@ -388,7 +604,7 @@ html {
 }
 
 .footer-right a:hover {
-    color: var(--accent-orange);
+    color: var(--burnt-orange);
 }
 
 /* Responsive Design */
@@ -406,6 +622,11 @@ html {
         font-size: 1rem;
     }
     
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .case-studies-grid {
         grid-template-columns: 1fr;
     }
@@ -415,6 +636,14 @@ html {
     }
     
     .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .workflows-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .capabilities-grid {
         grid-template-columns: 1fr;
     }
     
@@ -440,5 +669,13 @@ html {
     .btn {
         padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
+    }
+    
+    .workflow-card {
+        padding: 1.5rem;
+    }
+    
+    .tech-capabilities {
+        padding: 2rem 1.5rem;
     }
 }
