@@ -72,22 +72,233 @@ body:has(a:hover, button:hover, .workflow-card:hover) .cursor-outline {
 /* =========================================
    4. HERO SECTION
    ========================================= */
+/* =========================================
+   NEW STUNNING HERO STYLES
+   ========================================= */
+
+/* Hero Container */
 .hero {
-    position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center;
-    background: url('../hero-background.jpg') no-repeat center center/cover;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Deep Space Gradient matching your theme */
+    background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+    overflow: hidden;
+    perspective: 1000px; /* For 3D tilt */
+    border: none !important;
+    margin: 0 !important;
+    padding: 0;
+    z-index: 1;
 }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.7), var(--bg-dark)); }
-.hero-content { position: relative; z-index: 2; max-width: 900px; }
-.hero-tag { display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--accent-orange); color: var(--accent-orange); border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
-.hero-title { font-family: var(--font-display); font-size: 4rem; line-height: 1.1; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -2px; }
-.gradient-text { background: linear-gradient(to right, #fff, #999); -webkit-background-clip: text; color: transparent; }
-.hero-subtitle { font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem; }
-.hero-buttons { display: flex; gap: 1rem; justify-content: center; }
-.btn { padding: 1rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: 0.2s; }
-.btn-primary { background: var(--accent-orange); color: white; box-shadow: 0 0 20px rgba(255, 94, 0, 0.3); }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(255, 94, 0, 0.5); }
-.btn-glass { background: rgba(255, 255, 255, 0.05); color: white; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); }
-.btn-glass:hover { background: rgba(255, 255, 255, 0.1); border-color: white; }
+
+/* Particle Canvas */
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Parallax Orbs */
+.parallax-layer {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0; pointer-events: none;
+}
+
+.orb {
+    position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.3;
+    animation: float 10s ease-in-out infinite;
+}
+
+.orb-1 {
+    top: 20%; left: 15%; width: 300px; height: 300px;
+    background: radial-gradient(circle, var(--accent-orange), transparent);
+}
+
+.orb-2 {
+    bottom: 20%; right: 10%; width: 400px; height: 400px;
+    background: radial-gradient(circle, #3498db, transparent); /* Blue accent for contrast */
+    animation-delay: -5s;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 1000px;
+    padding: 2rem;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Tagline */
+.tag-line {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+}
+
+/* Headline */
+.headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+    color: white;
+}
+
+.gradient-text, .gradient-text-alt {
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-move 4s linear infinite;
+}
+
+.gradient-text {
+    background-image: linear-gradient(to right, var(--accent-orange), #ff9966, var(--accent-orange));
+}
+
+.gradient-text-alt {
+    background-image: linear-gradient(to right, #3498db, #ffffff, #3498db);
+}
+
+/* Subtext & Typewriter */
+.subtext-container {
+    min-height: 4rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtext {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    max-width: 700px;
+    display: inline;
+}
+
+.cursor {
+    display: inline-block; width: 2px; height: 1.2em;
+    background-color: var(--accent-orange);
+    margin-left: 5px; animation: blink 1s infinite;
+}
+
+/* Buttons */
+/* =========================
+   RESTORED CLASSIC BUTTONS
+   ========================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Primary Button (Orange) */
+.btn-primary {
+    background: var(--accent-orange); /* Uses your neon orange */
+    color: #FFFFFF;
+    border: 2px solid var(--accent-orange);
+}
+
+.btn-primary:hover {
+    background: #B34E14; /* Slightly darker orange */
+    border-color: #B34E14;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 94, 0, 0.4);
+}
+
+/* Secondary Button (Outline) */
+/* Adjusted to be White so it is visible on Space background */
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #FFFFFF; 
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background: #FFFFFF;
+    color: #000000; /* Text turns black on hover */
+    transform: translateY(-2px);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    opacity: 0.7; z-index: 10;
+}
+
+.mouse {
+    width: 26px; height: 42px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px; position: relative;
+}
+
+.wheel {
+    width: 4px; height: 4px; background: var(--accent-orange);
+    border-radius: 50%; position: absolute;
+    top: 8px; left: 50%; transform: translateX(-50%);
+    animation: mouse-scroll 1.5s infinite;
+}
+
+/* Fade In Stagger Animations */
+.fade-in-stagger { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s forwards; }
+.fade-in-stagger:nth-child(1) { animation-delay: 0.1s; }
+.fade-in-stagger:nth-child(2) { animation-delay: 0.3s; }
+.fade-in-stagger:nth-child(3) { animation-delay: 0.6s; }
+.fade-in-stagger:nth-child(4) { animation-delay: 0.9s; }
+.fade-in-stagger:nth-child(5) { animation-delay: 1.2s; }
+
+/* Keyframes */
+@keyframes gradient-move { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(255, 107, 53, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); } }
+@keyframes mouse-scroll { 0% { top: 8px; opacity: 1; } 100% { top: 24px; opacity: 0; } }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+
+@media (max-width: 768px) {
+    .headline { font-size: 2.5rem; }
+    .subtext { font-size: 1rem; }
+    .cta-wrapper { flex-direction: column; gap: 1rem; }
+    .btn { width: 100%; }
+}
 
 /* =========================================
    5. STATS & CONTENT
@@ -188,4 +399,1331 @@ body:has(a:hover, button:hover, .workflow-card:hover) .cursor-outline {
     .cursor-dot, .cursor-outline { display: none; }
     .case-studies-grid { grid-template-columns: 1fr; }
     .footer-email { font-size: 1.5rem; }
+}
+/* =========================================
+   VENUS SIMULATION BACKGROUNDS (FINAL FORCE FIX)
+   ========================================= */
+
+/* -----------------------------------------
+   SECTION 2: STATS 
+   ----------------------------------------- */
+.stats {
+    position: relative;
+    background-image: url('../Manifest-scene-1Venus.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    
+    /* SMOOTH TRANSITION FIX */
+    border: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 6rem; /* Ensure content doesn't hit the edge */
+    z-index: 1;
+}
+
+/* Gradient Overlay: Fades to solid black at the bottom to hide the seam */
+.stats::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.6) 50%, 
+        #0a0a0a 100% /* Matches site background color at bottom */
+    );
+    z-index: -1;
+}
+
+/* -----------------------------------------
+   SECTION 3: PROJECTS (Force Image)
+   ----------------------------------------- */
+#projects, section#projects {
+    position: relative;
+    /* THE FORCE FIX: Using shorthand and !important */
+    background: url('../Manifest-scene-2Venus0.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+    
+    /* SMOOTH TRANSITION FIX */
+    border-top: none !important;
+    margin-top: -1px; /* Pulls it up slightly to overlap the previous black fade */
+    z-index: 1;
+}
+
+/* Dark Overlay: Fades from solid black at top */
+#projects::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        #0a0a0a 0%, /* Starts solid black to blend with section 2 */
+        rgba(0, 0, 0, 0.7) 20%,
+        rgba(0, 0, 0, 0.85) 100%
+    );
+    z-index: -1;
+}
+
+/* -----------------------------------------
+   GLASS CARDS (Visibility Fix)
+   ----------------------------------------- */
+.stats .stat-card, 
+#projects .project-card {
+    background: rgba(20, 20, 20, 0.6) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.stats .stat-card:hover, 
+#projects .project-card:hover {
+    background: rgba(20, 20, 20, 0.85) !important;
+    transform: translateY(-5px);
+    border-color: var(--accent-orange);
+}
+/* =================================================================
+   THE CINEMATIC UNIVERSE EXPERIENCE (SECTIONS 4 - 7)
+   "Best of Best" Professional Grade CSS
+   ================================================================= */
+
+/* --- GLOBAL 3D PARALLAX & SEAMLESS LOGIC --- */
+/* This applies the "Video Feel" to all space sections */
+#automation, #skills, .cta, .footer {
+    position: relative;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important; /* THE 3D SCROLL EFFECT */
+    
+    /* ENGINEERING SEAMLESS TRANSITIONS */
+    border: none !important;
+    outline: none !important;
+    margin-top: -2px; /* Negative margin removes black lines between images */
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    width: 100%;
+    z-index: 1;
+}
+
+/* --- THE GLASSMORPHISM (Shiny, High-End Cards) --- */
+/* Makes all cards inside these sections look like futuristic glass panels */
+.workflow-card, .skill-card, .tech-caps {
+    background: rgba(15, 15, 25, 0.55) !important; /* Deep space glass */
+    backdrop-filter: blur(16px) saturate(180%); /* The "Shiny" Blur */
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover Effect: Cards glow and lift */
+.workflow-card:hover, .skill-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(15, 15, 25, 0.75) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15); /* Outer Glow */
+}
+
+
+/* =================================================================
+   SECTION 4: AUTOMATION (JUPITER)
+   ================================================================= */
+#automation {
+    background-image: url('../manifest-scene-1Jupiter.jpg');
+}
+
+/* Jupiter Overlay: Deep Orange/Brown Fade */
+#automation::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.9) 0%,    /* Black top to blend with previous */
+        rgba(20, 10, 0, 0.4) 50%, /* Transparent Orange Middle */
+        rgba(0, 0, 0, 0.9) 100%   /* Black bottom to blend to next */
+    );
+    z-index: -1;
+}
+
+
+/* =================================================================
+   SECTION 5: SKILLS / EXPERTISE (MERCURY)
+   ================================================================= */
+#skills {
+    background-image: url('../manifest-scene-1Mercury.jpg');
+}
+
+/* Mercury Overlay: Cool Grey/Blue sci-fi tint */
+#skills::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.9) 0%, 
+        rgba(10, 15, 30, 0.5) 50%, 
+        rgba(0, 0, 0, 0.9) 100%
+    );
+    z-index: -1;
+}
+
+
+/* =================================================================
+   SECTION 6: CALL TO ACTION (MILKYWAY)
+   Note: If you don't have a <section class="cta">, add it to HTML
+   ================================================================= */
+.cta {
+    background-image: url('../manifest-scene-1Milkyway.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Cinematic Height */
+}
+
+/* Milkyway Overlay: Deep Cosmic Purple */
+.cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.95) 0%, 
+        rgba(20, 0, 40, 0.3) 50%, 
+        rgba(0, 0, 0, 0.9) 100%
+    );
+    z-index: -1;
+}
+
+
+/* =================================================================
+   SECTION 7: FOOTER (SUCCESS)
+   ================================================================= */
+.footer {
+    background-image: url('../manifest-scene-1success.jpg');
+    margin-top: -2px;
+    border-top: none !important;
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+}
+
+/* Success Overlay: Golden/Warm Victory Glow */
+.footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Fades from black to a warm golden bottom */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%, 
+        rgba(50, 30, 0, 0.6) 60%, 
+        rgba(20, 10, 0, 0.9) 100%
+    );
+    z-index: -1; /* Behind text, in front of image */
+    pointer-events: none;
+}
+
+/* Footer Text Pop */
+.footer h1, .footer h2 {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6); /* Golden Text Glow */
+    position: relative;
+    z-index: 2;
+}
+/* =================================================================
+   THE FINAL PIECES: SUN & MOON (GOD LEVEL AESTHETICS)
+   ================================================================= */
+
+/* --- SECTION 0.5: THE SOLAR COCKPIT (NAVBAR) --- */
+/* Transforms the nav into a high-tech glass panel hovering over the Sun */
+.navbar {
+    /* The Sun Background */
+    background: url('../manifest-scene-1Sun.jpg') no-repeat center center !important;
+    background-size: cover !important;
+    
+    /* Glassmorphism styling */
+    border-bottom: 1px solid rgba(255, 200, 100, 0.3); /* Golden Rim */
+    box-shadow: 0 4px 30px rgba(255, 100, 0, 0.15); /* Subtle Solar Glow below */
+}
+
+/* The "Welder's Mask" Overlay 
+   This ensures the text remains readable even on a bright Sun background */
+.navbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark glass tint */
+    background: rgba(10, 5, 0, 0.85); 
+    backdrop-filter: blur(8px); /* Blurs the sun details slightly */
+    -webkit-backdrop-filter: blur(8px);
+    z-index: -1; /* Places it behind the text */
+}
+
+/* Make the Logo Text Glow like hot plasma */
+.logo-text {
+    text-shadow: 0 0 15px rgba(255, 100, 0, 0.8);
+}
+
+
+/* --- SECTION 1.5: THE LUNAR BRIDGE (TRANSITION) --- */
+/* This creates the cinematic flight from Earth (Hero) to Venus (Stats) 
+   passing by the Moon */
+.cosmic-divider {
+    position: relative;
+    height: 400px; /* The height of the "Video" window */
+    width: 100%;
+    
+    /* The Moon Image */
+    background-image: url('../manifest-scene-1moon.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* 3D Parallax Effect */
+    background-repeat: no-repeat;
+    
+    /* Seamless blending logic */
+    margin-top: -2px;
+    margin-bottom: -2px;
+    z-index: 0;
+}
+
+/* The "Cinematic Fade" Overlay 
+   This blends the top into the Hero section and the bottom into the Stats section
+   so there are NO awkward borders. */
+.cosmic-divider::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Gradient: Black (Top) -> Transparent (Middle) -> Black (Bottom) */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,      /* Solid Black blend with Hero */
+        rgba(0, 0, 0, 0.2) 40%,   /* Reveal Moon */
+        rgba(0, 0, 0, 0.2) 60%,   /* Reveal Moon */
+        rgba(0, 0, 0, 1) 100%     /* Solid Black blend with Stats */
+    );
+}
+
+/* --- HERO SECTION ADJUSTMENT --- */
+/* We need to ensure the bottom of the hero blends into the moon */
+.hero {
+    border-bottom: none !important;
+    margin-bottom: -1px; /* Pulls moon up */
+}
+
+/* --- STATS SECTION ADJUSTMENT --- */
+/* Ensure the top of the stats section blends with the moon */
+.stats {
+    border-top: none !important;
+    margin-top: -1px; /* Pulls stats up */
+}
+/* =================================================================
+   FINAL UPGRADE: HERO & COSMIC INTERFACE
+   ================================================================= */
+
+/* --- 1. THE COSMIC STARLIGHT CURSOR --- */
+/* Removes default cursor and adds a glowing star interaction */
+* { cursor: none !important; }
+
+.cursor-core {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px var(--accent-orange);
+    transition: transform 0.1s;
+}
+
+.cursor-halo {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.15s ease-out;
+    backdrop-filter: blur(2px); /* Blurs the world behind the cursor */
+}
+
+/* Hover State: When over links/buttons, the star expands */
+body:has(a:hover, button:hover, .card:hover) .cursor-core {
+    transform: translate(-50%, -50%) scale(0.5);
+    background: var(--accent-orange);
+}
+body:has(a:hover, button:hover, .card:hover) .cursor-halo {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 100, 0, 0.1);
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 30px rgba(255, 100, 0, 0.2);
+}
+
+
+/* --- 2. THE "GOD LEVEL" HERO SECTION --- */
+.hero {
+    position: relative;
+    height: 110vh; /* Slightly taller to allow seamless blending */
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    
+    /* Remove static background, we use a pseudo-element for animation now */
+    background: #000; 
+    
+    /* BLENDING: Remove borders */
+    border: none !important;
+    margin: 0 !important;
+    padding: 0;
+    z-index: 1;
+}
+
+/* THE MOVING BACKGROUND (Ken Burns Effect) */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: url('../hero-background.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -2;
+    
+    /* This creates the "Video" feel - slow breathing movement */
+    animation: cinematic-breath 20s ease-in-out infinite alternate;
+}
+
+/* THE "ATMOSPHERE" OVERLAY 
+   Instead of a dull dark overlay, we use a "Golden Hour" gradient 
+   to make it look optimistic and grand. */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center, 
+        rgba(255, 160, 80, 0.15) 0%, /* Warm Golden Center */
+        rgba(0, 0, 0, 0.4) 60%,      /* Darkening Mids */
+        rgba(0, 0, 0, 1) 100%        /* Solid Black Edges for perfect blending */
+    );
+    z-index: -1;
+    mix-blend-mode: multiply; /* Blends colors beautifully */
+}
+
+/* OPTIONAL: A secondary light leak for "Grand Vibes" */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,       /* Black top blend (Sun Nav) */
+        transparent 20%, 
+        transparent 80%,
+        rgba(0, 0, 0, 1) 100%      /* Black bottom blend (Moon) */
+    );
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Typography Pop */
+.hero-title {
+    text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    position: relative;
+    z-index: 2;
+}
+
+/* ANIMATION KEYFRAMES */
+@keyframes cinematic-breath {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1); /* Slow zoom in */
+    }
+}
+/* =================================================================
+   THE PROFESSIONAL "VOID TRANSITION" (FIX FOR SECTIONS 1-3)
+   Seamless. Dark. Cinematic.
+   ================================================================= */
+
+/* --- 1. HERO SECTION: The "Earth" Landing --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* Reset borders/margins for seamlessness */
+    border: none !important;
+    margin: 0 !important;
+    padding: 0;
+    background: #0a0a0a; /* Fallback color */
+    z-index: 1;
+}
+
+/* The Background Image with "Cinematic Breath" */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: -5%; /* Slightly larger to allow movement without edges showing */
+    width: 110%;
+    height: 110%;
+    background: url('../hero-background.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -2;
+    animation: cinematic-breath 25s ease-in-out infinite alternate;
+}
+
+/* The "VOID" Overlay - Crucial for the transition */
+/* This fades the image into solid dark color at the bottom */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,      /* Top: Clearer to see image */
+        rgba(0, 0, 0, 0.2) 50%,     /* Middle: Clear */
+        rgba(10, 10, 10, 1) 100%    /* Bottom: SOLID DARK (Matches next section) */
+    );
+    z-index: -1;
+}
+
+/* --- 2. STATS SECTION: Emerging from Darkness (Venus) --- */
+.stats {
+    position: relative;
+    background-image: url('../Manifest-scene-1Venus.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax */
+    
+    /* Seamless Settings */
+    border: none !important;
+    margin-top: -2px !important; /* Overlap slightly to kill lines */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    z-index: 2;
+}
+
+/* The Top-Fade Overlay */
+.stats::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Starts Solid Dark (matches Hero bottom) -> Fades to translucent -> Ends Dark */
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 1) 0%,     /* Solid Dark Top to blend with Hero */
+        rgba(10, 10, 10, 0.6) 15%,  /* Reveal Venus Image */
+        rgba(10, 10, 10, 0.6) 85%,  /* Keep Venus visible */
+        rgba(10, 10, 10, 1) 100%    /* Solid Dark Bottom to blend with Projects */
+    );
+    z-index: -1;
+}
+
+/* --- 3. PROJECTS SECTION: Deep Space --- */
+#projects {
+    position: relative;
+    background-image: url('../Manifest-scene-2Venus0.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Seamless Settings */
+    border: none !important;
+    margin-top: -2px !important;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    z-index: 2;
+}
+
+/* The Seamless Overlay */
+#projects::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 1) 0%,    /* Solid Dark Top to blend with Stats */
+        rgba(10, 10, 10, 0.5) 20%, /* Reveal Space Image */
+        rgba(10, 10, 10, 0.8) 100% /* Darken bottom */
+    );
+    z-index: -1;
+}
+
+/* --- 4. CARD STYLING (Uniformity) --- */
+/* Makes cards look cohesive across all backgrounds */
+.stat-card, .project-card {
+    background: rgba(15, 15, 20, 0.7) !important; /* Dark Glass */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    color: #fff;
+}
+
+/* Hover Effects */
+.stat-card:hover, .project-card:hover {
+    background: rgba(15, 15, 20, 0.9) !important;
+    border-color: var(--accent-orange) !important;
+    transform: translateY(-5px);
+}
+/* =========================================
+   FIXES: CENTER SCROLL & NORMAL CURSOR
+   ========================================= */
+
+/* 1. Restore Normal System Cursor */
+* {
+    cursor: auto !important; /* Force default cursor back */
+}
+
+/* Hide the custom cursor elements in case they are still in HTML */
+.cursor-core, .cursor-halo {
+    display: none !important;
+}
+
+/* 2. Force Scroll Indicator to Middle */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px; /* Giving it a width ensures 'margin: auto' centers it perfectly */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 20;
+    transform: none !important; /* Remove previous transform to prevent offsetting */
+}
+/* =========================================
+   SECTION 2: VENUS METRICS (GOD LEVEL)
+   ========================================= */
+
+.venus-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+    /* Background Settings */
+    background: #0a0a0a; /* Fallback */
+    border: none !important;
+    margin-top: -2px !important; /* Seamless connection */
+    padding: 6rem 0;
+    z-index: 2;
+}
+
+/* Animated Venus Background (Ken Burns Effect) */
+.venus-section::after {
+    content: "";
+    position: absolute;
+    top: -10%; left: -10%; width: 120%; height: 120%;
+    background: url('../Manifest-scene-1Venus.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -2;
+    animation: ken-burns 20s ease-in-out infinite alternate;
+}
+
+/* Atmospheric Overlay */
+.venus-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center, 
+        rgba(0,0,0,0.2) 0%, 
+        rgba(0,0,0,0.7) 70%, 
+        #0a0a0a 100%
+    );
+    z-index: -1;
+}
+
+/* Canvas for Network Lines */
+#network-canvas {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+}
+
+.relative-z { position: relative; z-index: 2; }
+
+/* --- THE GRID --- */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+/* --- THE 3D GLASS CARD --- */
+.metric-card {
+    position: relative;
+    background: rgba(10, 10, 12, 0.6); /* Dark Glass */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 24px;
+    padding: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.05);
+    transform-style: preserve-3d;
+}
+
+/* Rotating Gradient Border */
+.card-border-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 2px; /* Border width */
+    background: conic-gradient(from 0deg, transparent, var(--accent-orange), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotate-border 4s linear infinite;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Content Styling */
+.card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translateZ(20px); /* Pops content off card in 3D */
+}
+
+.metric-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    transition: transform 0.3s;
+}
+
+.metric-value-wrapper {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+}
+
+.metric-number {
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 20%, var(--accent-orange) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+}
+
+.metric-suffix {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-orange);
+}
+
+.metric-label {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Hidden Detail (Reveals on Hover/Click) */
+.metric-detail {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    color: #aaa;
+    font-size: 0.9rem;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+/* --- INTERACTIONS --- */
+.metric-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(255, 107, 53, 0.15);
+    background: rgba(20, 20, 25, 0.8);
+}
+
+.metric-card:hover .metric-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.metric-card:hover .card-border-glow {
+    opacity: 1;
+    animation-duration: 2s; /* Spin faster on hover */
+}
+
+.metric-card:hover .metric-detail {
+    height: auto;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 10px;
+}
+
+/* Pulse Ring Animation behind number */
+.pulse-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 1px solid var(--accent-orange);
+    opacity: 0;
+    z-index: -1;
+    animation: ripple 3s infinite;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes ken-burns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+@keyframes rotate-border {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes ripple {
+    0% { width: 0; height: 0; opacity: 0.5; }
+    100% { width: 150px; height: 150px; opacity: 0; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .metrics-grid { grid-template-columns: 1fr; gap: 20px; }
+    .metric-number { font-size: 3.5rem; }
+    .venus-section { padding: 4rem 20px; }
+}
+/* =========================================
+   SECTION 3: PREMIUM CAMPAIGN ARCHITECTURE
+   ========================================= */
+
+.premium-projects {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 8rem 0;
+    overflow: hidden;
+    
+    /* Bright Venus Background */
+    background: url('../Manifest-scene-2Venus0.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Parallax */
+    
+    /* Seamless Transition */
+    border: none !important;
+    margin-top: -2px !important;
+    z-index: 2;
+}
+
+/* Warm/Bright Overlay */
+.premium-projects::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 160, 100, 0.1) 0%, /* Lighter center */
+        rgba(10, 5, 0, 0.6) 70%,     /* Darker edges */
+        #0a0a0a 100%
+    );
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+/* Floating Particles Container */
+.project-bg-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* SECTION HEADER */
+.section-header-premium {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.premium-title {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.gradient-text-premium {
+    background: linear-gradient(to right, #ff8c42, #ff3c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.premium-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.5px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* PREMIUM CARDS CONTAINER */
+.premium-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* GLASS PANEL CARD */
+.premium-card {
+    position: relative;
+    background: rgba(15, 15, 20, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 48px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-style: preserve-3d;
+    overflow: hidden; /* Keeps overlay inside */
+}
+
+/* Hover Effects */
+.premium-card:hover {
+    transform: translateY(-15px) scale(1.01);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 107, 53, 0.5);
+    z-index: 10;
+}
+
+/* Card Dimming Logic (Focus Mode) */
+.premium-cards-container:hover .premium-card {
+    opacity: 0.6;
+    filter: blur(2px);
+}
+.premium-cards-container:hover .premium-card:hover {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* Shiny Glare Effect */
+.card-shine {
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.1),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+.premium-card:hover .card-shine {
+    left: 150%;
+    transition: 0.8s ease-in-out;
+}
+
+/* BADGES */
+.card-badge-row {
+    margin-bottom: 24px;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    animation: pulse-badge 3s infinite;
+}
+
+.badge-purple {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+.badge-green {
+    background: linear-gradient(135deg, #10b981, #059669);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+.badge-divider { margin: 0 10px; opacity: 0.6; }
+
+/* CLIENT HEADER */
+.client-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.client-icon {
+    font-size: 40px;
+    margin-right: 16px;
+    transition: transform 0.3s;
+}
+.premium-card:hover .client-icon {
+    animation: bounce 0.6s ease;
+}
+
+.client-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    font-family: var(--font-display);
+}
+
+.project-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 90%;
+}
+
+/* TECH STACK */
+.tech-stack-premium {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.tech-pill {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    color: white;
+    transition: 0.2s;
+    cursor: help;
+}
+
+.tech-pill:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    border-color: var(--accent-orange);
+}
+
+/* Custom Tooltip */
+.tech-pill::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #000;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.tech-pill:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* DETAILS GRID */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.detail-item {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-right: 12px;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+.dot-orange { background: #ff6b35; box-shadow: 0 0 8px #ff6b35; }
+.dot-blue { background: #3b82f6; box-shadow: 0 0 8px #3b82f6; }
+.dot-green { background: #10b981; box-shadow: 0 0 8px #10b981; }
+.dot-purple { background: #8b5cf6; box-shadow: 0 0 8px #8b5cf6; }
+
+.detail-item strong {
+    color: white;
+    margin-right: 6px;
+}
+
+/* CTA BUTTON */
+.premium-cta {
+    position: absolute;
+    bottom: 48px;
+    right: 48px;
+    background: linear-gradient(to right, #ff6b35, #ff8c42);
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+    display: inline-flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.premium-cta:hover {
+    transform: translateX(-4px);
+    box-shadow: 0 12px 30px rgba(255, 107, 53, 0.6);
+}
+
+.cta-arrow {
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+.premium-cta:hover .cta-arrow {
+    transform: translateX(4px);
+}
+
+/* MICRO-STATS OVERLAY */
+.micro-stats-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.micro-stat {
+    position: absolute;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.6);
+    background: rgba(0,0,0,0.6);
+    padding: 4px 10px;
+    border-radius: 4px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 0.4s ease;
+}
+
+.ms-tl { top: 20px; left: 20px; }
+.ms-tr { top: 20px; right: 20px; }
+.ms-bl { bottom: 20px; left: 20px; }
+.ms-br { bottom: 110px; right: 48px; /* Adjusted to not cover CTA */ }
+
+.premium-card:hover .micro-stat {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ANIMATIONS */
+@keyframes pulse-badge {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.slide-in-left { opacity: 0; transform: translateX(-50px); transition: 0.8s ease-out; }
+.slide-in-right { opacity: 0; transform: translateX(50px); transition: 0.8s ease-out; }
+.fade-in-scroll { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+
+.visible { opacity: 1 !important; transform: translateX(0) translateY(0) !important; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .premium-card { padding: 24px; }
+    .premium-cta { position: relative; bottom: auto; right: auto; width: 100%; justify-content: center; margin-top: 20px; }
+    .client-name { font-size: 1.5rem; }
+    .details-grid { grid-template-columns: 1fr; }
+    .micro-stat { display: none; } /* Hide micro stats on mobile */
+}
+/* =========================================
+   RESTORED DARK GLASS NAVIGATION
+   ========================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 0;
+    /* Dark Glass Background to blend with Space Theme */
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.nav-logo-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.highlight { color: var(--accent-orange); }
+
+/* Logo Animation (Kept the cool one) */
+.logo-wrapper {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    animation: levitate 4s ease-in-out infinite;
+}
+
+.tech-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.logo-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%; height: 120%;
+    background: radial-gradient(circle, var(--accent-orange) 0%, transparent 70%);
+    opacity: 0.4;
+    filter: blur(8px);
+    animation: pulse-glow 2s infinite alternate;
+}
+
+/* Menu Items */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: #a0a0a0; /* Muted gray */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* CTA Button */
+.nav-cta {
+    padding: 0.6rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent-orange), #ff8c42);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.5);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-menu { display: none; } /* Hides desktop menu on mobile */
 }

@@ -12,20 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Custom Cursor Elements -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
-    <!-- Ambient Background Grid -->
+ <!-- Ambient Background Grid -->
     <div class="ambient-grid"></div>
 
     <!-- Navigation -->
+    <!-- RESTORED DARK NAVIGATION -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo-group">
                 <a href="index.html" class="logo-text">Ayansh's Portfolio<span class="highlight">.</span></a>
                 
-                <!-- Levitating Hologram Logo -->
+                <!-- Keeping the Cool Levitating Logo -->
                 <div class="logo-wrapper">
                     <div class="logo-glow"></div>
                     <img src="logo.jpg" alt="Logo" class="tech-logo">
@@ -33,7 +30,7 @@
             </div>
 
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="#hero-section" class="nav-link active">Home</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#automation" class="nav-link">Automation</a></li>
                 <li><a href="#skills" class="nav-link">Expertise</a></li>
@@ -42,119 +39,283 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <span class="hero-tag hidden-element">🚀 Performance & Engineering</span>
-            <h1 class="hero-title hidden-element">
-                Marketing <span class="gradient-text">Precision</span>.<br>
-                Automation <span class="gradient-text">Intelligence</span>.
-            </h1>
-            <p class="hero-subtitle hidden-element">I replace manual guesswork with data-driven strategies and n8n workflows that scale revenue automatically.</p>
+    <!-- NEW STUNNING HERO SECTION -->
+    <section class="hero" id="hero-section">
+        <!-- Interactive Background Canvas -->
+        <canvas id="particle-canvas"></canvas>
+
+        <!-- 3D Parallax Background Elements -->
+        <div class="parallax-layer" data-speed="0.02">
+            <div class="orb orb-1"></div>
+        </div>
+        <div class="parallax-layer" data-speed="0.04">
+            <div class="orb orb-2"></div>
+        </div>
+
+        <!-- Main Content (Your Specific Text) -->
+        <div class="hero-content" id="tilt-card">
+            <span class="tag-line fade-in-stagger">🚀 Performance & Engineering</span>
             
-            <div class="hero-buttons hidden-element">
-                <a href="#projects" class="btn btn-primary">View Campaigns</a>
-                <a href="#automation" class="btn btn-glass">Automation Labs</a>
+            <h1 class="headline fade-in-stagger">
+                Performance <span class="gradient-text">Marketer</span> &<br>
+                Automation <span class="gradient-text-alt">Engineer</span>
+            </h1>
+            
+            <!-- Typewriter Container for your specific subtitle -->
+            <div class="subtext-container fade-in-stagger">
+                <p id="typewriter" class="subtext"></p>
+                <span class="cursor">|</span>
             </div>
+            
+            <!-- Restored Classic Buttons -->
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Campaign Projects</a>
+                <a href="#automation" class="btn btn-secondary">See Automation Workflows</a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator fade-in-stagger">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card hidden-element">
-                    <div class="stat-icon">📊</div>
-                    <div class="stat-number" data-target="2">0</div>
-                    <div class="stat-label">Full-Stack Campaigns</div>
+    
+
+    <!-- Stats Section starts here -->
+    <!-- SECTION 2: VENUS METRICS DASHBOARD -->
+    <section class="venus-section" id="venus-stats">
+        
+        <!-- Interactive Network Canvas (Background Connections) -->
+        <canvas id="network-canvas"></canvas>
+
+        <div class="container relative-z">
+            <div class="metrics-grid">
+                
+                <!-- Card 1 -->
+                <div class="metric-card tilt-card" data-tilt>
+                    <div class="card-border-glow"></div>
+                    <div class="card-content">
+                        <div class="metric-icon">📊</div>
+                        <div class="metric-value-wrapper">
+                            <span class="metric-number" data-target="2">0</span>
+                            <div class="pulse-ring"></div>
+                        </div>
+                        <h3 class="metric-label">Full-Stack Campaigns</h3>
+                        <div class="metric-detail">Managing 2 complete ecosystem lifecycles</div>
+                    </div>
                 </div>
-                <div class="stat-card hidden-element">
-                    <div class="stat-icon">🤖</div>
-                    <div class="stat-number" data-target="8">0</div>
-                    <div class="stat-label">n8n Workflows</div>
+
+                <!-- Card 2 -->
+                <div class="metric-card tilt-card" data-tilt>
+                    <div class="card-border-glow"></div>
+                    <div class="card-content">
+                        <div class="metric-icon">🤖</div>
+                        <div class="metric-value-wrapper">
+                            <span class="metric-number" data-target="8">0</span>
+                            <div class="pulse-ring"></div>
+                        </div>
+                        <h3 class="metric-label">n8n Workflows</h3>
+                        <div class="metric-detail">8 automated workflows running 24/7</div>
+                    </div>
                 </div>
-                <div class="stat-card hidden-element">
-                    <div class="stat-icon">🏷️</div>
-                    <div class="stat-number" data-target="30">0</div>
-                    <div class="stat-label">GTM Tags</div>
+
+                <!-- Card 3 -->
+                <div class="metric-card tilt-card" data-tilt>
+                    <div class="card-border-glow"></div>
+                    <div class="card-content">
+                        <div class="metric-icon">🏷️</div>
+                        <div class="metric-value-wrapper">
+                            <span class="metric-number" data-target="30">0</span>
+                            <span class="metric-suffix">+</span>
+                            <div class="pulse-ring"></div>
+                        </div>
+                        <h3 class="metric-label">GTM Tags</h3>
+                        <div class="metric-detail">Tracking every user interaction point</div>
+                    </div>
                 </div>
-                <div class="stat-card hidden-element">
-                    <div class="stat-icon">⏰</div>
-                    <div class="stat-number" data-target="12">0</div>
-                    <div class="stat-label">Hours Saved/Wk</div>
+
+                <!-- Card 4 -->
+                <div class="metric-card tilt-card" data-tilt>
+                    <div class="card-border-glow"></div>
+                    <div class="card-content">
+                        <div class="metric-icon">⏰</div>
+                        <div class="metric-value-wrapper">
+                            <span class="metric-number" data-target="12">0</span>
+                            <div class="pulse-ring"></div>
+                        </div>
+                        <h3 class="metric-label">Hours Saved/Wk</h3>
+                        <div class="metric-detail">Eliminating manual labor via automation</div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Projects Section (Restored Content) -->
-    <section id="projects" class="section-padding">
+    
+<!-- SECTION 3: PREMIUM CAMPAIGN ARCHITECTURE -->
+    <section id="projects" class="premium-projects">
+        <!-- Interactive Background Elements -->
+        <div class="project-bg-particles" id="project-particles"></div>
+        
         <div class="container">
-            <div class="section-header hidden-element">
-                <h2 class="section-title">Campaign <span class="highlight">Architecture</span></h2>
-                <p class="section-subtitle">Strategic simulations converting clicks into revenue.</p>
+            <div class="section-header-premium fade-in-scroll">
+                <h2 class="premium-title">Campaign <span class="gradient-text-premium">Architecture</span></h2>
+                <p class="premium-subtitle">Strategic simulations converting clicks into revenue.</p>
             </div>
             
-            <div class="case-studies-grid">
-                <!-- Project 1: Lenskart/VisionKart -->
-                <div class="project-card hidden-element">
-                    <div class="card-inner">
-                        <div class="card-header-row">
-                            <div class="card-badge">E-Commerce</div>
-                            <div class="card-roas">Target ROAS: 3.6x</div>
-                        </div>
-                        <h3>🛒 Lenskart/VisionKart - Online Eyewear</h3>
-                        <p class="project-desc">Complete e-commerce campaign architecture covering Google Ads (Search + Performance Max) and Meta Ads with full conversion tracking implementation(GTM, GA4, Meta Pixel).</p>
+            <div class="premium-cards-container">
+                
+                <!-- CARD 1: E-Commerce -->
+                <div class="premium-card glass-panel slide-in-left" data-type="ecommerce">
+                    <div class="card-shine"></div>
+                    <div class="card-content-wrapper">
                         
-                        <div class="tech-stack">
-                            <span>Google Search</span>
-                            <span>Performance Max</span>
-                            <span>Meta Ads</span>
-                            <span>E-commerce Tracking</span>
+                        <!-- Top Badge -->
+                        <div class="card-badge-row">
+                            <div class="status-badge badge-purple">
+                                <span class="badge-label">E-Commerce</span>
+                                <span class="badge-divider">|</span>
+                                <span class="badge-metric">Target ROAS: <span class="counter" data-target="3.6" data-decimals="1">0.0</span>x</span>
+                            </div>
                         </div>
 
-                        <div class="project-highlights">
-                            <div class="highlight-item"><strong>Strategy:</strong> Full-funnel approach from awareness to conversion.</div>
-                            <div class="highlight-item"><strong>Technical:</strong> GTM data layer, enhanced e-commerce events, purchase tracking.</div>
-                            <div class="highlight-item"><strong>Target ROAS:</strong> 3.6x (industry benchmark for mature campaigns).</div>
-                            <div class="highlight-item"><strong>Key Skills:</strong> Keyword research, RSA copywriting, audience targeting, conversion tracking.</div>
+                        <!-- Client Header -->
+                        <div class="client-header">
+                            <div class="client-icon icon-bounce">🛒</div>
+                            <h3 class="client-name">Lenskart/VisionKart - Online Eyewear</h3>
                         </div>
-                        
-                        <a href="case-study-visionkart.html" class="card-link">View Full Case Study <span class="arrow">→</span></a>
+
+                        <!-- Description -->
+                        <p class="project-description">
+                            Complete e-commerce campaign architecture covering Google Ads (Search + Performance Max) and Meta Ads with full conversion tracking implementation (GTM, GA4, Meta Pixel).
+                        </p>
+
+                        <!-- Tech Stack with Tooltips -->
+                        <div class="tech-stack-premium">
+                            <span class="tech-pill" data-tooltip="40% of budget allocation">Google Search</span>
+                            <span class="tech-pill" data-tooltip="Campaign ROAS: 4.2x">Performance Max</span>
+                            <span class="tech-pill" data-tooltip="Primary awareness channel">Meta Ads</span>
+                            <span class="tech-pill" data-tooltip="15+ custom events configured">E-commerce Tracking</span>
+                            <!-- Animated Connection Lines (Visual only via CSS/JS) -->
+                            <svg class="tech-connections" width="100%" height="100%"></svg>
+                        </div>
+
+                        <!-- Details Grid -->
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="dot dot-orange"></span>
+                                <strong>Strategy:</strong> <span class="typewriter-text">Full-funnel approach from awareness to conversion.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="dot dot-blue"></span>
+                                <strong>Technical:</strong> <span class="typewriter-text">GTM data layer, enhanced e-commerce events, purchase tracking.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="dot dot-green"></span>
+                                <strong>Target ROAS:</strong> 3.6x (industry benchmark for mature campaigns).
+                            </div>
+                            <div class="detail-item">
+                                <span class="dot dot-purple"></span>
+                                <strong>Key Skills:</strong> Keyword research, RSA copywriting, audience targeting, conversion tracking.
+                            </div>
+                        </div>
+
+                        <!-- Hover Micro-Stats Overlay -->
+                        <div class="micro-stats-overlay">
+                            <div class="micro-stat ms-tl">Clicks: 48K</div>
+                            <div class="micro-stat ms-tr">Impressions: 2.4M</div>
+                            <div class="micro-stat ms-bl">Conv: 1.2K</div>
+                            <div class="micro-stat ms-br">Spend: ₹4.2L</div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <a href="case-study-visionkart.html" class="premium-cta magnetic-btn">
+                            View Full Case Study 
+                            <span class="cta-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Project 2: Shree Ganga Hotel -->
-                <div class="project-card hidden-element">
-                    <div class="card-inner">
-                        <div class="card-header-row">
-                            <div class="card-badge">Lead Gen</div>
-                            <div class="card-roas">CPA: ₹500</div>
-                        </div>
-                        <h3>🏨 Shree Ganga Hotel</h3>
-                        <p class="project-desc">Comprehensive lead generation strategy for a hospitality business in Ujjain's pilgrimage tourism market, covering Google Search and Meta Lead Ads with phone call and form tracking.</p>
+                <!-- CARD 2: Lead Gen -->
+                <div class="premium-card glass-panel slide-in-right" data-type="leadgen">
+                    <div class="card-shine"></div>
+                    <div class="card-content-wrapper">
                         
-                        <div class="tech-stack">
-                            <span>Google Search</span>
-                            <span>Meta Lead Ads</span>
-                            <span>Local Targeting</span>
-                            <span>Call Tracking</span>
+                        <!-- Top Badge -->
+                        <div class="card-badge-row">
+                            <div class="status-badge badge-green">
+                                <span class="badge-label">Lead Gen</span>
+                                <span class="badge-divider">|</span>
+                                <span class="badge-metric">CPA: ₹<span class="counter" data-target="500" data-decimals="0">0</span></span>
+                            </div>
                         </div>
 
-                        <div class="project-highlights">
-                            <div class="highlight-item"><strong>Strategy:</strong> Seasonal budget allocation for pilgrimage peak periods.</div>
-                            <div class="highlight-item"><strong>Technical:</strong> GTM form tracking, phone click events, lead quality scoring.</div>
-                            <div class="highlight-item"><strong>Target CPA:</strong> ₹500 per qualified lead.</div>
-                            <div class="highlight-item"><strong>Key skills:</strong> Local search optimization, instant forms, lead quality analysis</div>
+                        <!-- Client Header -->
+                        <div class="client-header">
+                            <div class="client-icon icon-bounce">🏨</div>
+                            <h3 class="client-name">Shree Ganga Hotel</h3>
                         </div>
-                        
-                        <a href="case-study-shreeganga.html" class="card-link">View Full Case Study <span class="arrow">→</span></a>
+
+                        <!-- Description -->
+                        <p class="project-description">
+                            Comprehensive lead generation strategy for a hospitality business in Ujjain's pilgrimage tourism market, covering Google Search and Meta Lead Ads with phone call and form tracking.
+                        </p>
+
+                        <!-- Tech Stack with Tooltips -->
+                        <div class="tech-stack-premium">
+                            <span class="tech-pill" data-tooltip="High-intent keyword targeting">Google Search</span>
+                            <span class="tech-pill" data-tooltip="Instant Form integration">Meta Lead Ads</span>
+                            <span class="tech-pill" data-tooltip="Geo-fenced radius targeting">Local Targeting</span>
+                            <span class="tech-pill" data-tooltip="GTM Click-to-call events">Call Tracking</span>
+                            <svg class="tech-connections" width="100%" height="100%"></svg>
+                        </div>
+
+                        <!-- Details Grid -->
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="dot dot-orange"></span>
+                                <strong>Strategy:</strong> <span class="typewriter-text">Seasonal budget allocation for pilgrimage peak periods.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="dot dot-blue"></span>
+                                <strong>Technical:</strong> <span class="typewriter-text">GTM form tracking, phone click events, lead quality scoring.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="dot dot-green"></span>
+                                <strong>Target CPA:</strong> ₹500 per qualified lead.
+                            </div>
+                            <div class="detail-item">
+                                <span class="dot dot-purple"></span>
+                                <strong>Key Skills:</strong> Local search optimization, instant forms, lead quality analysis.
+                            </div>
+                        </div>
+
+                        <!-- Hover Micro-Stats Overlay -->
+                        <div class="micro-stats-overlay">
+                            <div class="micro-stat ms-tl">Leads: 850</div>
+                            <div class="micro-stat ms-tr">Impr: 120K</div>
+                            <div class="micro-stat ms-bl">Calls: 320</div>
+                            <div class="micro-stat ms-br">Rate: 12%</div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <a href="case-study-shreeganga.html" class="premium-cta magnetic-btn">
+                            View Full Case Study 
+                            <span class="cta-arrow">→</span>
+                        </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
+                
 
     <!-- Automation Section (Restored All 8 Workflows) -->
     <section id="automation" class="section-padding bg-darker">
@@ -420,17 +581,26 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // 1. Custom Cursor
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
+        // 1. Custom Cursor Logic (UPDATED)
+        const cursorDot = document.querySelector('.cursor-core');
+        const cursorOutline = document.querySelector('.cursor-halo');
 
         window.addEventListener('mousemove', (e) => {
             const posX = e.clientX;
             const posY = e.clientY;
+
+            // Core follows instantly
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
-            cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
+
+            // Halo follows with cinematic lag
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
         });
+
+        // ... rest of your existing scripts ...
 
         // 2. Scroll Reveal
         const observer = new IntersectionObserver((entries) => {
@@ -470,6 +640,374 @@
         
         const statsSection = document.querySelector('.stats');
         if(statsSection) statsObserver.observe(statsSection);
+        document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Typewriter Effect (YOUR SPECIFIC CONTENT)
+    const text = "Building profitable campaigns through data-driven strategy, technical implementation, and intelligent automation";
+    const typeWriterElement = document.getElementById("typewriter");
+    
+    if (typeWriterElement) {
+        let index = 0;
+        function type() {
+            if (index < text.length) {
+                typeWriterElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 30); // Typing speed
+            }
+        }
+        setTimeout(type, 800);
+    }
+
+    // 2. Magnetic Buttons
+    const buttons = document.querySelectorAll(".magnetic-btn");
+    buttons.forEach((btn) => {
+        btn.addEventListener("mousemove", (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const xDist = x - rect.width / 2;
+            const yDist = y - rect.height / 2;
+            btn.style.transform = `translate(${xDist * 0.2}px, ${yDist * 0.2}px) scale(1.05)`;
+            const text = btn.querySelector('.btn-text');
+            if(text) text.style.transform = `translate(${xDist * 0.1}px, ${yDist * 0.1}px)`;
+        });
+        btn.addEventListener("mouseleave", () => {
+            btn.style.transform = "translate(0, 0) scale(1)";
+            const text = btn.querySelector('.btn-text');
+            if(text) text.style.transform = "translate(0, 0)";
+        });
+    });
+
+    // 3. 3D Tilt & Parallax
+    const heroSection = document.getElementById("hero-section");
+    const tiltCard = document.getElementById("tilt-card");
+    const parallaxLayers = document.querySelectorAll(".parallax-layer");
+
+    if (heroSection && tiltCard) {
+        heroSection.addEventListener("mousemove", (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            const rotateX = (y - 0.5) * -10; 
+            const rotateY = (x - 0.5) * 10;
+            tiltCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+            parallaxLayers.forEach(layer => {
+                const speed = layer.getAttribute('data-speed');
+                const xMove = (window.innerWidth - e.pageX * speed) / 100;
+                const yMove = (window.innerHeight - e.pageY * speed) / 100;
+                layer.style.transform = `translateX(${xMove}px) translateY(${yMove}px)`;
+            });
+        });
+        heroSection.addEventListener("mouseleave", () => {
+            tiltCard.style.transform = `rotateX(0) rotateY(0)`;
+        });
+    }
+
+    // 4. Interactive Particle System (Canvas)
+    const canvas = document.getElementById("particle-canvas");
+    if (canvas) {
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+        const particleCount = 60; 
+        const mouse = { x: null, y: null, radius: 150 };
+
+        window.addEventListener("mousemove", (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.color = 'rgba(255, 255, 255, 0.4)';
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+                
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius) {
+                    if (mouse.x < this.x && this.x < canvas.width - 10) this.x += 2;
+                    if (mouse.x > this.x && this.x > 10) this.x -= 2;
+                    if (mouse.y < this.y && this.y < canvas.height - 10) this.y += 2;
+                    if (mouse.y > this.y && this.y > 10) this.y -= 2;
+                }
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function connectParticles() {
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        let opacityValue = 1 - (distance / 100);
+                        ctx.strokeStyle = 'rgba(255, 255, 255,' + opacityValue * 0.1 + ')';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            connectParticles();
+            requestAnimationFrame(animateParticles);
+        }
+
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        });
+
+        initParticles();
+        animateParticles();
+    }
+});
+// =========================================
+    // SECTION 2: VENUS METRICS LOGIC (Fixed Names)
+    // =========================================
+
+    // 1. COUNTER ANIMATION
+    // We use specific names (venusSection) to avoid conflicts with previous code
+    const venusSection = document.querySelector('.venus-section');
+    const venusNumbers = document.querySelectorAll('.metric-number');
+    let venusStarted = false;
+
+    const venusObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !venusStarted) {
+            venusStarted = true;
+            venusNumbers.forEach((num) => {
+                const target = +num.getAttribute('data-target');
+                const duration = 2000; 
+                const start = performance.now();
+
+                function step(currentTime) {
+                    const elapsed = currentTime - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const ease = 1 - Math.pow(1 - progress, 4); // Ease Out
+                    const currentVal = Math.floor(ease * target);
+                    
+                    // Add leading zero if < 10
+                    num.innerText = currentVal < 10 ? `0${currentVal}` : currentVal;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        num.innerText = target < 10 ? `0${target}` : target;
+                    }
+                }
+                requestAnimationFrame(step);
+            });
+        }
+    }, { threshold: 0.5 });
+
+    if (venusSection) venusObserver.observe(venusSection);
+
+
+    // 2. 3D TILT EFFECT (Targeting specific tilt-cards)
+    const venusCards = document.querySelectorAll('.tilt-card');
+
+    venusCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Calculate rotation based on mouse position
+            const rotateX = ((y - centerY) / centerY) * -10; 
+            const rotateY = ((x - centerX) / centerX) * 10;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
+        });
+    });
+
+
+    // 3. NETWORK LINES (Connecting the cards)
+    const netCanvas = document.getElementById('network-canvas');
+    if(netCanvas && venusSection) {
+        const netCtx = netCanvas.getContext('2d');
+        
+        function resizeNet() {
+            netCanvas.width = window.innerWidth;
+            netCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeNet);
+        resizeNet();
+
+        function animateNetwork() {
+            netCtx.clearRect(0, 0, netCanvas.width, netCanvas.height);
+            
+            // Get positions of all cards relative to the canvas
+            const cardRects = Array.from(venusCards).map(c => {
+                const r = c.getBoundingClientRect();
+                const scrollY = window.scrollY;
+                const sectionTop = venusSection.offsetTop;
+                return {
+                    x: r.left + r.width / 2,
+                    y: (r.top + scrollY) - sectionTop + r.height / 2 
+                };
+            });
+
+            // Draw Orange Lines
+            netCtx.strokeStyle = 'rgba(255, 107, 53, 0.3)'; 
+            netCtx.lineWidth = 1;
+            netCtx.beginPath();
+
+            if (cardRects.length === 4) {
+                // Draw Box Connection
+                netCtx.moveTo(cardRects[0].x, cardRects[0].y);
+                netCtx.lineTo(cardRects[1].x, cardRects[1].y);
+                netCtx.lineTo(cardRects[3].x, cardRects[3].y);
+                netCtx.lineTo(cardRects[2].x, cardRects[2].y);
+                netCtx.closePath();
+                netCtx.stroke();
+                
+                // Draw Cross Connection
+                netCtx.beginPath();
+                netCtx.moveTo(cardRects[0].x, cardRects[0].y);
+                netCtx.lineTo(cardRects[3].x, cardRects[3].y);
+                netCtx.stroke();
+            }
+
+            requestAnimationFrame(animateNetwork);
+        }
+        
+        // Only run animation when section is visible (Performance)
+        const observerCanvas = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting) animateNetwork();
+        });
+        observerCanvas.observe(venusSection);
+    }
+    /* --- ADD THIS TO YOUR EXISTING SCRIPT TAG --- */
+
+    // =========================================
+    // SECTION 3: PREMIUM PROJECTS LOGIC
+    // =========================================
+
+    // 1. SCROLL REVEAL & METRIC COUNTERS
+    const projectSection = document.querySelector('.premium-projects');
+    const projectElements = document.querySelectorAll('.slide-in-left, .slide-in-right, .fade-in-scroll');
+    const premiumCounters = document.querySelectorAll('.premium-projects .counter');
+    let projectsStarted = false;
+
+    const projectObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Reveal Element
+                entry.target.classList.add('visible');
+
+                // Start Counters if section is visible (once)
+                if (!projectsStarted && entry.target.classList.contains('premium-projects')) {
+                    projectsStarted = true;
+                    premiumCounters.forEach(counter => {
+                        const target = parseFloat(counter.getAttribute('data-target'));
+                        const decimals = parseInt(counter.getAttribute('data-decimals'));
+                        const duration = 2000;
+                        const start = performance.now();
+
+                        function step(currentTime) {
+                            const elapsed = currentTime - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const ease = 1 - Math.pow(1 - progress, 4); // Ease Out
+                            
+                            const currentVal = (ease * target).toFixed(decimals);
+                            counter.innerText = currentVal;
+
+                            if (progress < 1) requestAnimationFrame(step);
+                            else counter.innerText = target.toFixed(decimals);
+                        }
+                        requestAnimationFrame(step);
+                    });
+                }
+            }
+        });
+    }, { threshold: 0.15 });
+
+    if(projectSection) projectObserver.observe(projectSection);
+    projectElements.forEach(el => projectObserver.observe(el));
+
+
+    // 2. BACKGROUND PARTICLES (Simple CSS/JS Hybrid)
+    const particleContainer = document.getElementById('project-particles');
+    if (particleContainer) {
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.style.position = 'absolute';
+            p.style.width = Math.random() * 4 + 2 + 'px';
+            p.style.height = p.style.width;
+            p.style.background = 'rgba(255, 160, 100, ' + (Math.random() * 0.4 + 0.1) + ')';
+            p.style.borderRadius = '50%';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.top = Math.random() * 100 + '%';
+            p.style.animation = `float ${Math.random() * 10 + 10}s infinite linear`;
+            p.style.opacity = Math.random();
+            particleContainer.appendChild(p);
+        }
+    }
+
+    // 3. 3D TILT FOR PREMIUM CARDS
+    const premCards = document.querySelectorAll('.premium-card');
+    premCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = ((y - centerY) / centerY) * -5; // Subtle tilt
+            const rotateY = ((x - centerX) / centerX) * 5;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px) scale(1.01)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            // Reset but keep hover lift if CSS :hover matches, otherwise reset fully
+            card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)`;
+        });
+    });
     </script>
 </body>
 </html>
+
