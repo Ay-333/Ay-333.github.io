@@ -85,75 +85,92 @@
 
     
 
-    <!-- Stats Section starts here -->
-    <!-- SECTION 2: VENUS METRICS DASHBOARD -->
-    <section class="venus-section" id="venus-stats">     
-
+  <!-- SECTION 2: COMPARISON TABLE (VENUS BACKGROUND) -->
+    <section class="venus-section" id="venus-stats">
+        
         <div class="container relative-z">
-           <div class="metrics-grid">
+            
+            <!-- Section Header -->
+            <div class="section-header-premium fade-in-scroll">
+                <h2 class="premium-title">What's Actually <span class="gradient-text-premium">Different?</span></h2>
+                <p class="premium-subtitle">Regular Performance Marketer vs Me</p>
+            </div>
+
+            <!-- Comparison Table Wrapper (Glass Card) -->
+            <div class="comparison-wrapper glass-panel fade-in-scroll">
                 
-                <!-- Card 1 -->
-                <div class="metric-card">
-                    <div class="card-content">
-                        <div class="metric-icon">📊</div>
-                        <div class="metric-value-wrapper">
-                            <!-- Removed data-target, added static number -->
-                            <span class="metric-number">02</span>
-                            <div class="pulse-ring"></div>
-                        </div>
-                        <h3 class="metric-label">Full-Stack Campaigns</h3>
-                        <div class="metric-detail">Managing 2 complete ecosystem lifecycles</div>
-                    </div>
+                <!-- Scroll Container for Mobile Smoothness -->
+                <div class="table-scroll-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th class="col-metric">What Needs to Be Done</th>
+                                <th class="col-regular">Regular Marketer</th>
+                                <th class="col-me">Me</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Google Ads & Meta Setup</strong></td>
+                                <td class="regular-cell">Runs ads. Optimizes on clicks. No business math.</td>
+                                <td class="me-cell">Builds profit-first campaigns. Calculates break-even ROAS, CPA, and margins before spending. Clear scaling rules based on real numbers.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tracking (GTM, GA4, CAPI)</strong></td>
+                                <td class="regular-cell">Adds basic pixels. Can't fix tracking when it breaks.</td>
+                                <td class="me-cell">Bulletproof tracking: GTM data layers, Meta CAPI, Enhanced Conversions.</td>
+                            </tr>
+                            <tr>
+                                <tr>
+    <td><strong>AI Proficiency</strong></td>
+    <td class="regular-cell">Uses ChatGPT for captions and ad copy. That's it.</td>
+    <td class="me-cell">Operates 20+ AI tools: <strong>Gemini 3 Pro, Claude Code, Vertex AI (Veo 3.1), Imagen 3, Google Flow, ElevenLabs, n8n, Cursor, Replit, VS Code, Google AI Studio, OpenRouter API, Grok, Apify, Firecrawl, Perplexity, NotebookLM</strong>. Agency-level work in 1–2 days.</td>
+</tr>
+                            <tr>
+                                <td><strong>Automation Systems</strong></td>
+                                <td class="regular-cell">Zero technical automation.</td>
+                                <td class="me-cell">8+ workflows 24/7: Budget alerts, auto-pause bad keywords, competitor monitoring.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Problem Solving</strong></td>
+                                <td class="regular-cell">Can't read code. Guesses at fixes.</td>
+                                <td class="me-cell">Debugs GTM tags, scripts, APIs, server-side setups at the root level.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Budget Safety</strong></td>
+                                <td class="regular-cell">Checks once a day. Waste happens.</td>
+                                <td class="me-cell"><strong>24/7 Automated Protection.</strong> Spend checked every 4 hours. Instant alerts.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reporting</strong></td>
+                                <td class="regular-cell">Manual copy-pasting into Excel.</td>
+                                <td class="me-cell">Fully Automated: Live dashboards & weekly reports sent via API. Zero manual work.</td>
+                            </tr>
+                            <tr>
+    <td><strong>Campaign Optimization</strong></td>
+    <td class="regular-cell">Slow changes based on gut feeling.</td>
+    <td class="me-cell">Data-driven + automated: Auto-pauses bad keywords, detects drops instantly. Faster scaling, less waste.</td>
+</tr>
+<tr>
+    <td><strong>Creative & Video Ads</strong></td>
+    <td class="regular-cell">Outsources creatives. Slow + expensive.</td>
+    <td class="me-cell">AI-powered production: Claude Code, Vertex AI, Gemini 3, DaVinci Resolve. Professional creatives in days, not weeks.</td>
+</tr>
+<tr>
+    <td><strong>Ecommerce Scaling</strong></td>
+    <td class="regular-cell">Basic Shopping campaigns. Limited tracking knowledge.</td>
+    <td class="me-cell">Full-stack growth: PMAX, Shopping, retargeting, feed optimization, GA4 ecommerce tracking, attribution modeling. More profit, not just traffic.</td>
+</tr>
+                        </tbody>
+                    </table>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="metric-card">
-                    <div class="card-content">
-                        <div class="metric-icon">🤖</div>
-                        <div class="metric-value-wrapper">
-                            <!-- Removed data-target, added static number -->
-                            <span class="metric-number">08</span>
-                            <div class="pulse-ring"></div>
-                        </div>
-                        <h3 class="metric-label">n8n Workflows</h3>
-                        <div class="metric-detail">8 automated workflows running 24/7</div>
-                    </div>
+                
+                <!-- Bottom Line Footer -->
+                <div class="table-footer">
+                    <p><strong>The Bottom Line:</strong> Most marketers manage campaigns. I build intelligent systems that scale businesses.</p>
                 </div>
-
-                <!-- Card 3 -->
-               <div class="metric-card">
-                    
-                    <div class="card-content">
-                        <div class="metric-icon">🏷️</div>
-                        <div class="metric-value-wrapper">
-                            <!-- Removed data-target, added static number -->
-                            <span class="metric-number">30</span>
-                            <span class="metric-suffix">+</span>
-                            <div class="pulse-ring"></div>
-                        </div>
-                        <h3 class="metric-label">GTM Tags</h3>
-                        <div class="metric-detail">Tracking every user interaction point</div>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-               <div class="metric-card">
-                   
-                    <div class="card-content">
-                        <div class="metric-icon">⏰</div>
-                        <div class="metric-value-wrapper">
-                            <!-- Removed data-target, added static number -->
-                            <span class="metric-number">12</span>
-                            <div class="pulse-ring"></div>
-                        </div>
-                        <h3 class="metric-label">Hours Saved/Wk</h3>
-                        <div class="metric-detail">Eliminating manual labor via automation</div>
-                    </div>
-                </div>
-
             </div>
 
-            </div>
         </div>
     </section>
 
@@ -1051,6 +1068,8 @@ if (canvas && window.innerWidth > 768) { // Only run on desktop
         if (e.key === 'Escape' && contactModal.classList.contains('active')) {
             closeModal();
         }
+        // Ensure this line exists in your script logic
+const revealElements = document.querySelectorAll('.hidden-element, .fade-in-scroll, ...');
     });
     </script>
 </body>

@@ -2091,3 +2091,127 @@ body:has(a:hover, button:hover, .card:hover) .cursor-halo {
 .pulse-ring {
     display: none !important;
 }
+/* =========================================
+   SECTION 2: COMPARISON TABLE (VENUS THEME)
+   ========================================= */
+
+/* The Glass Card Wrapper */
+.comparison-wrapper {
+    background: rgba(15, 15, 20, 0.75); /* Dark Glass */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    overflow: hidden; /* Rounds the corners */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.comparison-wrapper:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-orange);
+    box-shadow: 0 30px 80px rgba(255, 107, 53, 0.15);
+}
+
+/* Mobile Scroll Container (Crucial for Smoothness) */
+.table-scroll-container {
+    width: 100%;
+    overflow-x: auto; /* Enables swipe on mobile */
+    -webkit-overflow-scrolling: touch; /* Momentum scrolling for iOS */
+}
+
+/* Table Layout */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 700px; /* Forces scrollbar on mobile so text doesn't squish */
+}
+
+/* Header Row */
+.comparison-table thead th {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    padding: 20px 24px;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap; /* Keeps headers on one line */
+}
+
+/* Column Widths */
+.col-metric { width: 25%; color: #a0a0a0; }
+.col-regular { width: 35%; color: #ff6b6b; /* Reddish for "Regular" */ }
+.col-me { width: 40%; color: var(--accent-orange); background: rgba(255, 107, 53, 0.05); }
+
+/* Body Cells */
+.comparison-table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95rem;
+    vertical-align: top;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* "Me" Column Styles */
+.me-cell {
+    background: rgba(255, 107, 53, 0.03); /* Subtle orange tint */
+    font-weight: 500;
+    color: white !important;
+}
+
+/* "Regular" Column Styles */
+.regular-cell {
+    color: #a0a0a0 !important; /* Dimmed text */
+}
+
+/* The Bottom Line Footer */
+.table-footer {
+    background: linear-gradient(to right, rgba(255, 107, 53, 0.1), rgba(255, 107, 53, 0.05));
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--accent-orange);
+}
+
+.table-footer p {
+    font-size: 1.1rem;
+    color: white;
+    margin: 0;
+}
+
+/* --- MOBILE OPTIMIZATIONS --- */
+@media (max-width: 768px) {
+    /* Reduce padding inside table cells */
+    .comparison-table td, 
+    .comparison-table th { 
+        padding: 15px; 
+        font-size: 0.9rem; 
+    }
+    
+    /* Make the footer stack nicely */
+    .table-footer p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    /* Add a subtle "Swipe" hint */
+    .comparison-wrapper::after {
+        content: '← Swipe to compare →';
+        display: block;
+        text-align: center;
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.4);
+        padding: 5px;
+        background: rgba(0,0,0,0.2);
+    }
+}
