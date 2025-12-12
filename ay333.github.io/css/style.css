@@ -2092,19 +2092,56 @@ body:has(a:hover, button:hover, .card:hover) .cursor-halo {
     display: none !important;
 }
 /* =========================================
-   SECTION 2: COMPARISON TABLE (VENUS THEME)
+   SECTION 2: COMPARISON TABLE (FINAL)
+   Desktop: Glass Table | Mobile: Stacked Cards
    ========================================= */
 
-/* The Glass Card Wrapper */
+/* --- 1. SECTION BACKGROUND (Venus) --- */
+.venus-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 8rem 0;
+    overflow: hidden;
+    
+    /* Background Image */
+    background: url('../Manifest-scene-1Venus.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
+    
+    /* Seamless Transition borders */
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-top: -2px !important;
+    z-index: 2;
+}
+
+/* Dark Overlay for readability */
+.venus-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center, 
+        rgba(0,0,0,0.4) 0%, 
+        rgba(0,0,0,0.8) 80%, 
+        #0a0a0a 100%
+    );
+    z-index: 0;
+}
+
+/* --- 2. DESKTOP TABLE STYLES --- */
+
+/* The Glass Container */
 .comparison-wrapper {
-    background: rgba(15, 15, 20, 0.75);
+    background: rgba(15, 15, 20, 0.75); /* Dark Glass */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     transition: transform 0.3s ease;
 }
@@ -2115,79 +2152,33 @@ body:has(a:hover, button:hover, .card:hover) .cursor-halo {
     box-shadow: 0 30px 80px rgba(255, 107, 53, 0.15);
 }
 
-/* Mobile Scroll Container */
-.table-scroll-container {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 107, 53, 0.5) rgba(255, 255, 255, 0.1);
-}
-
-/* Custom Scrollbar for Webkit browsers */
-.table-scroll-container::-webkit-scrollbar {
-    height: 8px;
-}
-
-.table-scroll-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.table-scroll-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 107, 53, 0.5);
-    border-radius: 10px;
-}
-
-.table-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 107, 53, 0.7);
-}
-
-/* Table Layout */
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    min-width: 800px; /* Forces horizontal scroll on mobile */
 }
 
-/* Header Row */
+/* Headers */
 .comparison-table thead th {
     background: rgba(255, 255, 255, 0.05);
     color: white;
-    padding: 20px 24px;
+    padding: 24px;
     font-family: var(--font-display);
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    white-space: nowrap;
-    position: sticky;
-    top: 0;
-    z-index: 10;
 }
 
-/* Column Widths */
-.col-metric { 
-    width: 25%; 
-    color: #a0a0a0;
-    font-weight: 600;
-}
-
-.col-regular { 
-    width: 35%; 
-    color: #ff6b6b;
-}
-
-.col-me { 
-    width: 40%; 
-    color: var(--accent-orange); 
-    background: rgba(255, 107, 53, 0.05);
-}
+/* Column Colors */
+.col-metric { width: 25%; color: #a0a0a0; }
+.col-regular { width: 35%; color: #ff6b6b; }
+.col-me { width: 40%; color: var(--accent-orange); background: rgba(255, 107, 53, 0.05); }
 
 /* Body Cells */
 .comparison-table td {
-    padding: 18px 24px;
+    padding: 20px 24px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     font-size: 0.95rem;
     vertical-align: top;
@@ -2195,145 +2186,135 @@ body:has(a:hover, button:hover, .card:hover) .cursor-halo {
     color: rgba(255, 255, 255, 0.85);
 }
 
-.comparison-table td strong {
-    color: white;
-    font-weight: 600;
-}
-
-.comparison-table tr:last-child td {
-    border-bottom: none;
-}
-
-.comparison-table tr:hover {
-    background: rgba(255, 255, 255, 0.02);
-}
-
-/* "Me" Column Styles */
+/* Column Specific Styles */
 .me-cell {
     background: rgba(255, 107, 53, 0.03);
     font-weight: 500;
     color: white !important;
-    border-left: 2px solid rgba(255, 107, 53, 0.3);
+    border-left: 1px solid rgba(255, 107, 53, 0.1);
 }
 
-/* "Regular" Column Styles */
 .regular-cell {
     color: #a0a0a0 !important;
 }
 
-/* The Bottom Line Footer */
+.comparison-table strong {
+    color: white;
+    font-weight: 700;
+}
+
+/* Footer */
 .table-footer {
     background: linear-gradient(to right, rgba(255, 107, 53, 0.1), rgba(255, 107, 53, 0.05));
-    padding: 24px;
+    padding: 20px;
     text-align: center;
-    border-top: 2px solid rgba(255, 107, 53, 0.3);
+    border-top: 1px solid var(--accent-orange);
 }
 
 .table-footer p {
     font-size: 1.1rem;
     color: white;
     margin: 0;
-    line-height: 1.6;
 }
 
-.table-footer strong {
-    color: var(--accent-orange);
-}
-
-/* =========================================
-   MOBILE OPTIMIZATIONS
-   ========================================= */
+/* --- 3. MOBILE TRANSFORMATION (THE CARD LAYOUT) --- */
 
 @media (max-width: 768px) {
-    /* Add mobile padding to container */
+    
+    /* 1. Reset Background Attachment (Fixes mobile parallax lag) */
+    .venus-section {
+        background-attachment: scroll;
+        padding: 4rem 15px;
+    }
+
+    /* 2. Reset Wrapper for Mobile */
     .comparison-wrapper {
-        margin: 0 10px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+    }
+
+    /* 3. Turn Table Rows into Cards */
+    .comparison-table, 
+    .comparison-table tbody, 
+    .comparison-table tr, 
+    .comparison-table td {
+        display: block;
+        width: 100%;
+    }
+
+    /* Hide Desktop Headers */
+    .comparison-table thead {
+        display: none; 
+    }
+
+    /* Card Style for each Row */
+    .comparison-table tr {
+        background: rgba(20, 20, 25, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 16px;
+        margin-bottom: 24px; /* Space between cards */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        overflow: hidden;
     }
 
-    /* Reduce table minimum width for better mobile fit */
-    .comparison-table {
-        min-width: 700px;
+    /* --- Cell 1: The Title (Top of Card) --- */
+    .comparison-table td:first-child {
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Reduce header padding */
-    .comparison-table thead th {
-        padding: 16px 12px;
-        font-size: 0.9rem;
+    /* --- Cell 2: Regular Marketer (Middle of Card) --- */
+    .comparison-table td:nth-child(2) {
+        color: #a0a0a0;
+        padding: 40px 20px 20px 20px; /* Top padding for label */
+        position: relative;
+    }
+    /* Add Label */
+    .comparison-table td:nth-child(2)::before {
+        content: "❌ Regular Marketer";
+        position: absolute;
+        top: 15px; left: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #ff6b6b;
+        text-transform: uppercase;
         letter-spacing: 0.5px;
     }
 
-    /* Reduce cell padding */
-    .comparison-table td {
-        padding: 14px 12px;
-        font-size: 0.85rem;
-        line-height: 1.5;
+    /* --- Cell 3: Me (Bottom of Card) --- */
+    .comparison-table td:nth-child(3) {
+        background: linear-gradient(to bottom, rgba(255, 107, 53, 0.05), rgba(255, 107, 53, 0.1));
+        color: white;
+        padding: 40px 20px 20px 20px; /* Top padding for label */
+        position: relative;
+        border-top: 1px solid rgba(255, 107, 53, 0.2);
+        border-left: none; /* Remove desktop left border */
     }
-
-    /* Adjust footer */
-    .table-footer {
-        padding: 18px 15px;
-    }
-
-    .table-footer p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-
-    /* Add swipe indicator */
-    .table-scroll-container::after {
-        content: '← Swipe to see more →';
-        display: block;
-        text-align: center;
+    /* Add Label */
+    .comparison-table td:nth-child(3)::before {
+        content: "✅ Me (Ayansh)";
+        position: absolute;
+        top: 15px; left: 20px;
         font-size: 0.75rem;
-        color: rgba(255, 255, 255, 0.4);
-        padding: 8px;
-        background: rgba(0, 0, 0, 0.2);
-        position: sticky;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 5;
+        font-weight: 700;
+        color: var(--accent-orange);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
-}
-
-@media (max-width: 480px) {
-    /* Extra small phones */
-    .comparison-table {
-        min-width: 650px;
-    }
-
-    .comparison-table thead th {
-        padding: 12px 10px;
-        font-size: 0.8rem;
-    }
-
-    .comparison-table td {
-        padding: 12px 10px;
-        font-size: 0.8rem;
-    }
-
-    .table-footer p {
-        font-size: 0.85rem;
-    }
-}
-
-/* =========================================
-   TABLET OPTIMIZATIONS
-   ========================================= */
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .comparison-table {
-        min-width: 750px;
-    }
-
-    .comparison-table thead th {
-        padding: 18px 16px;
-        font-size: 1rem;
-    }
-
-    .comparison-table td {
-        padding: 16px;
-        font-size: 0.9rem;
+    
+    /* Footer adjustments */
+    .table-footer {
+        margin-top: 20px;
+        border-radius: 12px;
+        background: rgba(255, 107, 53, 0.1);
+        border: 1px solid var(--accent-orange);
     }
 }
