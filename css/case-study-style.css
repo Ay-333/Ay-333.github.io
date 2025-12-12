@@ -1,0 +1,408 @@
+/* =========================================
+   CASE STUDY: PREMIUM CYBER-MAGAZINE THEME
+   ========================================= */
+
+:root {
+    --bg-dark: #050505;
+    --text-main: #e0e0e0; /* Slightly off-white for reading comfort */
+    --text-muted: #a0a0a0;
+    --accent-orange: #ff5e00;
+    --accent-purple: #8b5cf6;
+    --glass-panel: rgba(20, 20, 25, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.8; /* Increased for readability */
+    font-size: 1.1rem;
+    overflow-x: hidden;
+}
+
+/* Background Texture to prevent "Flatness" */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(255, 94, 0, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.05), transparent 25%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Reuse your existing Navbar styles here, or ensure they are imported */
+
+/* =========================================
+   1. HERO HEADER (Cinematic Title)
+   ========================================= */
+.case-study-header {
+    padding: 140px 0 80px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), var(--bg-dark)), 
+                url('../hero-background.jpg') center/cover no-repeat fixed; /* Reuse your hero image subtly */
+    border-bottom: 1px solid var(--glass-border);
+    text-align: center;
+}
+
+.breadcrumb {
+    font-size: 0.9rem;
+    color: var(--accent-orange);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.breadcrumb a { color: var(--text-muted); text-decoration: none; transition: 0.3s; }
+.breadcrumb a:hover { color: white; }
+
+.case-study-header h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.case-study-subtitle {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    margin-bottom: 4rem;
+    font-weight: 300;
+}
+
+/* The Meta Data Grid (Role, Tools, etc) */
+.case-study-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.meta-item {
+    background: var(--glass-panel);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.meta-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-orange);
+}
+
+.meta-item strong {
+    display: block;
+    color: var(--accent-orange);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   2. TABLE OF CONTENTS (Floating Glass)
+   ========================================= */
+.toc-section {
+    padding: 0 0 4rem;
+    margin-top: -30px; /* Overlap header slightly */
+    position: relative;
+    z-index: 10;
+}
+
+.toc-box {
+    background: rgba(15, 15, 20, 0.95);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.toc-box h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 1.5rem;
+    color: white;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 1rem;
+}
+
+.toc-box ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 0;
+}
+
+.toc-box li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.toc-box li a::before {
+    content: "→";
+    margin-right: 8px;
+    color: var(--accent-orange);
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: 0.2s;
+}
+
+.toc-box li a:hover {
+    color: white;
+}
+
+.toc-box li a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =========================================
+   3. CONTENT SECTIONS (Typography & Layout)
+   ========================================= */
+.case-study-section {
+    padding: 6rem 0;
+    position: relative;
+}
+
+/* Container limits width for reading comfort */
+.content-block {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* "Alt-Bg" creates separation between phases */
+.alt-bg {
+    background: rgba(255, 255, 255, 0.02); /* Very subtle lighten */
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* Typography Styling */
+h2.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section-number {
+    font-family: var(--font-heading);
+    font-size: 8rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03); /* Huge subtle watermark */
+    text-align: center;
+    line-height: 0;
+    margin-bottom: 1rem;
+    pointer-events: none;
+}
+
+h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+    color: var(--accent-orange);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+}
+
+ul, ol {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    color: var(--text-main);
+}
+
+li strong {
+    color: white;
+}
+
+/* =========================================
+   4. IMAGES & SCREENSHOTS (Browser Style)
+   ========================================= */
+.screenshot {
+    margin: 3rem 0;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.screenshot:hover {
+    transform: scale(1.02);
+}
+
+.screenshot img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* =========================================
+   5. DEMO CALLOUT (Special Feature)
+   ========================================= */
+.demo-callout {
+    background: linear-gradient(135deg, rgba(255, 94, 0, 0.1), rgba(139, 92, 246, 0.1));
+    border: 1px solid var(--accent-orange);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.demo-callout::before {
+    content: "LIVE DEMO";
+    position: absolute;
+    top: 0; right: 0;
+    background: var(--accent-orange);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 0.3rem 1rem;
+    border-bottom-left-radius: 10px;
+}
+
+.demo-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.demo-button {
+    display: inline-block;
+    background: white;
+    color: black;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+.demo-button:hover {
+    background: var(--accent-orange);
+    color: white;
+    box-shadow: 0 0 30px var(--accent-orange);
+}
+
+/* =========================================
+   6. RESULTS SECTION (Victory Lap)
+   ========================================= */
+.result-section {
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(20, 50, 20, 0.2));
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 100, 0.3); /* Green tint for success */
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.result-card:hover {
+    background: rgba(0, 255, 100, 0.1);
+    transform: translateY(-10px);
+}
+
+.result-card h3 {
+    margin: 0;
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #00ff88, #00b8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.result-card p {
+    margin: 0;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   7. FINAL CTA
+   ========================================= */
+.case-study-cta {
+    padding: 8rem 0;
+    text-align: center;
+    background: var(--bg-dark);
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(135deg, var(--accent-orange), #ff8c42);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(255, 94, 0, 0.3);
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 94, 0, 0.5);
+}
+
+/* =========================================
+   RESPONSIVE TWEAKS
+   ========================================= */
+@media (max-width: 768px) {
+    .case-study-header h1 { font-size: 2.5rem; }
+    .section-number { font-size: 5rem; }
+    .content-block { padding: 0 20px; }
+    .toc-box { display: none; /* Often better to hide massive TOC on mobile or collapse it */ }
+}

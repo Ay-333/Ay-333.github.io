@@ -34,7 +34,7 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#automation" class="nav-link">Automation</a></li>
                 <li><a href="#skills" class="nav-link">Expertise</a></li>
-                <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
+               <li><a href="#" class="nav-cta trigger-contact">Let's Talk</a></li>
             </ul>
         </div>
     </nav>
@@ -558,6 +558,108 @@
                     <h3>Technical Setup</h3>
                     <p>Pixel setup, Conversions API, Merchant Center, feed optimization, server-side tracking.</p>
                 </div>
+                <div class="skill-card hidden-element">
+                    <div class="skill-icon">💻</div>
+                    <h3>AI Tools Knowledge</h3>
+                    <p>Google Vertex AI (Veo), Gemini 3 & Nano Banana Pro, Prompt Engineering & Vibe Coding, Claude Code & Google Flow, Google AI Studio & ElevenLabs, Google Antigravity & Grok, MCPs: Perplexity & Firecrawl.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5.5: HALL OF CREDENTIALS -->
+    <section id="certificates" class="cert-section">
+        <!-- Background Particles -->
+        <div class="project-bg-particles" id="cert-particles"></div>
+        
+        <div class="container">
+            <div class="section-header-premium fade-in-scroll">
+                <h2 class="premium-title">Verified <span class="gradient-text-premium">Credentials</span></h2>
+                <p class="premium-subtitle">Industry-recognized certifications validating technical expertise.</p>
+            </div>
+
+            <div class="cert-grid">
+                
+                <!-- 1. Google Analytics 4 -->
+                <div class="cert-card tilt-card" data-tilt>
+                    <div class="cert-shine"></div>
+                    <div class="cert-border-glow"></div>
+                    <div class="cert-image-wrapper">
+                        <img src="images\cert-ga4-certification.png" alt="GA4 Certification" loading="lazy">
+                        <div class="cert-overlay">
+                            <span class="cert-issuer">Google Skillshop</span>
+                        </div>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Google Analytics Certification</h4>
+                        <p class="cert-date">Issued: Apr 2024</p>
+                    </div>
+                </div>
+
+                <!-- 2. Udemy Google Ads -->
+                <div class="cert-card tilt-card" data-tilt>
+                    <div class="cert-shine"></div>
+                    <div class="cert-border-glow"></div>
+                    <div class="cert-image-wrapper">
+                        <img src="images\cert-udemy-ads.jpg" alt="Udemy Google Ads" loading="lazy">
+                        <div class="cert-overlay">
+                            <span class="cert-issuer">Udemy</span>
+                        </div>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Ultimate Google Ads Training</h4>
+                        <p class="cert-date">Issued: Mar 2024</p>
+                    </div>
+                </div>
+
+                <!-- 3. Foundations of Digital Marketing -->
+                <div class="cert-card tilt-card" data-tilt>
+                    <div class="cert-shine"></div>
+                    <div class="cert-border-glow"></div>
+                    <div class="cert-image-wrapper">
+                        <img src="images\cert-digital-marketing.png" alt="Foundations of Digital Marketing" loading="lazy">
+                        <div class="cert-overlay">
+                            <span class="cert-issuer">Google Career Certificates</span>
+                        </div>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Foundations of Digital Marketing</h4>
+                        <p class="cert-date">Issued: Oct 2023</p>
+                    </div>
+                </div>
+
+                <!-- 4. Attract & Engage (Digital Marketing.png) -->
+                <div class="cert-card tilt-card" data-tilt>
+                    <div class="cert-shine"></div>
+                    <div class="cert-border-glow"></div>
+                    <div class="cert-image-wrapper">
+                        <img src="images\Digital Marketing.png" alt="Attract & Engage Customers" loading="lazy">
+                        <div class="cert-overlay">
+                            <span class="cert-issuer">Google Career Certificates</span>
+                        </div>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Attract & Engage Customers</h4>
+                        <p class="cert-date">Issued: Feb 2024</p>
+                    </div>
+                </div>
+
+                <!-- 5. Marketing Analytics -->
+                <div class="cert-card tilt-card" data-tilt>
+                    <div class="cert-shine"></div>
+                    <div class="cert-border-glow"></div>
+                    <div class="cert-image-wrapper">
+                        <img src="images\Marketing Analytics.png" alt="Marketing Analytics" loading="lazy">
+                        <div class="cert-overlay">
+                            <span class="cert-issuer">Google & Coursera</span>
+                        </div>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Marketing Analytics & Measurement</h4>
+                        <p class="cert-date">Issued: Apr 2024</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -565,19 +667,36 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+                <div class="footer-content">
                 <h1>TASTE is new Technology.</h1>
                 <h2>Ready to scale?</h2>
-                <a href="contact.html" class="footer-email">ay.wrkjg@gmail.com</a>
+                
+                <!-- 1. Email: Triggers the Contact Modal -->
+                <a href="#" class="footer-email trigger-contact">ay.wrkjg@gmail.com</a>
+                
                 <div class="footer-links">
-                    <a href="assets/pdfs/resume.pdf">Resume</a>
-                    <a href="https://github.com/Ay-333">GitHub</a>
-                    <a href="#">Phone No.</a>
+                    <!-- 2. Resume: Link to PDF (Keep as is) -->
+                    <a href="assets/pdfs/resume.pdf" target="_blank">Resume</a>
+                    
+                    <!-- 3. GitHub: Opens in new tab -->
+                    <a href="https://github.com/Ay-333" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    
+                    <!-- 4. Phone: Triggers the Contact Modal -->
+                    <a href="#" class="trigger-contact">Phone No.</a>
                 </div>
+                
                 <p class="copyright">© 2025 Ayansh. Performance Marketing & Automation.</p>
             </div>
         </div>
     </footer>
+
+    <!-- CONTACT IMAGE MODAL -->
+    <div id="contact-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <img src="images\contact-popup.png" alt="Contact Info">
+        </div>
+    </div>
 
     <!-- JAVASCRIPT -->
     <script>
@@ -704,9 +823,9 @@
     }
 
     // 4. Interactive Particle System (Canvas)
-    const canvas = document.getElementById("particle-canvas");
-    if (canvas) {
-        const ctx = canvas.getContext("2d");
+   const canvas = document.getElementById("particle-canvas");
+if (canvas && window.innerWidth > 768) { // Only run on desktop
+    const ctx = canvas.getContext("2d");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
@@ -865,7 +984,7 @@
 
     // 3. NETWORK LINES (Connecting the cards)
     const netCanvas = document.getElementById('network-canvas');
-    if(netCanvas && venusSection) {
+if(netCanvas && venusSection && window.innerWidth > 768)  {
         const netCtx = netCanvas.getContext('2d');
         
         function resizeNet() {
@@ -968,23 +1087,29 @@
     projectElements.forEach(el => projectObserver.observe(el));
 
 
-    // 2. BACKGROUND PARTICLES (Simple CSS/JS Hybrid)
-    const particleContainer = document.getElementById('project-particles');
-    if (particleContainer) {
-        for (let i = 0; i < 30; i++) {
-            const p = document.createElement('div');
-            p.style.position = 'absolute';
-            p.style.width = Math.random() * 4 + 2 + 'px';
-            p.style.height = p.style.width;
-            p.style.background = 'rgba(255, 160, 100, ' + (Math.random() * 0.4 + 0.1) + ')';
-            p.style.borderRadius = '50%';
-            p.style.left = Math.random() * 100 + '%';
-            p.style.top = Math.random() * 100 + '%';
-            p.style.animation = `float ${Math.random() * 10 + 10}s infinite linear`;
-            p.style.opacity = Math.random();
-            particleContainer.appendChild(p);
+  // 2. BACKGROUND PARTICLES (Updated for Certificates)
+    const particleContainers = [
+        document.getElementById('project-particles'),
+        document.getElementById('cert-particles')
+    ];
+
+    particleContainers.forEach(container => {
+        if (container) {
+            for (let i = 0; i < 20; i++) {
+                const p = document.createElement('div');
+                p.style.position = 'absolute';
+                p.style.width = Math.random() * 3 + 1 + 'px';
+                p.style.height = p.style.width;
+                p.style.background = 'rgba(255, 255, 255, ' + (Math.random() * 0.3 + 0.1) + ')';
+                p.style.borderRadius = '50%';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.top = Math.random() * 100 + '%';
+                p.style.animation = `float ${Math.random() * 10 + 10}s infinite linear`;
+                p.style.opacity = Math.random();
+                container.appendChild(p);
+            }
         }
-    }
+    });
 
     // 3. 3D TILT FOR PREMIUM CARDS
     const premCards = document.querySelectorAll('.premium-card');
@@ -1006,6 +1131,45 @@
             // Reset but keep hover lift if CSS :hover matches, otherwise reset fully
             card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)`;
         });
+    });
+
+    // =========================================
+    // CONTACT MODAL LOGIC
+    // =========================================
+    const contactModal = document.getElementById('contact-modal');
+    const contactTriggers = document.querySelectorAll('.trigger-contact');
+    const closeBtn = document.querySelector('.modal-close');
+
+    // Open Modal
+    contactTriggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault(); // Stop link navigation
+            contactModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        });
+    });
+
+    // Close Function
+    function closeModal() {
+        contactModal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Close on X button
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on clicking outside the image
+    contactModal.addEventListener('click', (e) => {
+        if (e.target === contactModal) {
+            closeModal();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+            closeModal();
+        }
     });
     </script>
 </body>

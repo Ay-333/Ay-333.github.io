@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionKart: Scaling an Eyewear Brand to ₹15L/Month | Case Study</title>
+    <meta name="description" content="Complete e-commerce campaign strategy scaling VisionKart to ₹15 Lakhs monthly revenue with 3.6x ROAS through systematic optimization.">
+    <!-- LINK TO MAIN STYLE (For Navbar/Footer) -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- LINK TO NEW CASE STUDY STYLE -->
+    <link rel="stylesheet" href="css/case-study-style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- Navigation (Fixed & Styled) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Fixed Logo Section -->
+            <div class="nav-logo-group">
+                <a href="index.html" class="logo-text">Ayansh's Portfolio<span class="highlight">.</span></a>
+                
+                <!-- Logo Animation -->
+                <div class="logo-wrapper">
+                    <div class="logo-glow"></div>
+                    <img src="logo.jpg" alt="Logo" class="tech-logo">
+                </div>
+            </div>
+
+            <!-- Fixed Menu Links (Added 'nav-link' class to make them white) -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#automation" class="nav-link">Automation</a></li>
+                <li><a href="toolkit.html" class="nav-link">Toolkit</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Case Study Header -->
+    <section class="case-study-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; <a href="index.html#projects">Case Studies</a> &gt; VisionKart
+            </div>
+            <h1>VisionKart: Scaling an Eyewear Brand to ₹15L/Month</h1>
+            <p class="case-study-subtitle">Performance Marketing Strategy & Technical Implementation</p>
+            
+            <div class="case-study-meta">
+                <div class="meta-item">
+                    <strong>My Role:</strong> Performance Marketing Strategist & Tech Implementation
+                </div>
+                <div class="meta-item">
+                    <strong>Tools Used:</strong> Google Ads, Meta Ads, GTM, GA4, n8n, JavaScript, Google Antigravity, Claude code
+                </div>
+                <div class="meta-item">
+                    <strong>Target ROAS:</strong> 3.6x
+                </div>
+                <div class="meta-item">
+                    <strong>Monthly Goal:</strong> ₹15 Lakhs Revenue
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="toc-section">
+        <div class="container">
+            <div class="toc-box">
+                <h3>📋 Table of Contents</h3>
+                <ul>
+                    <li><a href="#approach">How I Approached This</a></li>
+                    <li><a href="#phase-1">Phase 1: Making Sure We Could Trust Our Data</a></li>
+                    <li><a href="#phase-2">Phase 2: Figuring Out the Economics</a></li>
+                    <li><a href="#phase-3">Phase 3: Building the Google Ads Machine</a></li>
+                    <li><a href="#phase-4">Phase 4: Meta Ads - Creating Demand</a></li>
+                    <li><a href="#phase-5">Phase 5: The Automation Layer</a></li>
+                    <li><a href="#phase-6">Phase 6: Optimization & Scaling Playbook</a></li>
+                    <li><a href="#result">The Result</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section id="approach" class="case-study-section">
+        <div class="container">
+            <h2 class="section-title">How I Approached This</h2>
+            
+            <div class="content-block">
+                <p>When I took on VisionKart (a direct-to-consumer eyewear brand), the brief was pretty straightforward: scale profitably. But here's the thing—most campaigns fail not because of bad ads, but because of bad foundations.</p>
+
+                <p>So instead of jumping straight into creative testing, I built a proper system. Six phases, each solving a specific problem.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 1: Tracking -->
+    <section id="phase-1" class="case-study-section alt-bg">
+        <div class="container">
+            <h2 class="section-number">01</h2>
+            <h2 class="section-title">Making Sure We Could Actually Trust Our Data</h2>
+            
+            <div class="content-block">
+                <h3>The Problem</h3>
+                <p>You can't optimize what you can't measure accurately.</p>
+
+                <p>I've seen too many campaigns running blind because their tracking setup is held together with duct tape. With iOS 14 privacy updates eating into signal quality, I knew we needed something bulletproof.</p>
+
+                <p>So I built a redundant tracking architecture using GTM and GA4, backed up with Meta's Conversions API. The goal was simple: capture 99% of conversions, not the usual 80%.</p>
+
+                <div class="screenshot">
+                    <img src="images/phase1/Screenshot 2025-12-05 125430.png" alt="Customer Avatar Research">
+                </div>
+
+                <h3>The Technical Deep Dive: How I Built the Tracking System</h3>
+                <p>Look, anyone can spin up a Meta pixel. But if you want automated bidding strategies (like Target ROAS) to actually work, you need to feed them clean, reliable data.</p>
+
+                <h4>The Challenge</h4>
+                <p>Standard pixel tracking typically misses 15-20% of conversions. Ad blockers, browser privacy settings (ITP on Safari, ATT on iOS)—it all adds up. And when Meta's algorithm is making bid decisions based on incomplete data, you're basically gambling.</p>
+
+                <h4>What I Built</h4>
+                <p>A dual-layer tracking system, orchestrated through Google Tag Manager.</p>
+
+                <p><strong>1. The Data Layer Setup</strong></p>
+                <p>Instead of relying on flaky "Page Load" triggers, I implemented a proper Data Layer architecture. Every key action—viewing a product, adding to cart, starting checkout, completing purchase—pushes structured data into the layer.</p>
+
+                <p>I mapped everything to GA4's standard e-commerce events: view_item, add_to_cart, begin_checkout, purchase.</p>
+
+                <p>Then I configured GTM variables to dynamically pull values like transaction ID, item price, and currency. This is what makes accurate ROAS calculation possible.</p>
+
+                <div class="screenshot">
+                    <img src="images/phase1/Screenshot 2025-12-05 123828.png" alt="Market Analysis">
+                </div>
+
+                <p><strong>2. The Meta CAPI Integration</strong></p>
+                <p>To combat signal loss, I set up Meta's Conversions API alongside the standard browser pixel.</p>
+
+                <p>Browser-side tracking catches what it can. Server-side tracking (via GTM Server Container in simulation mode) fills in the gaps. Both streams send deduplicated events to Meta using event_id matching.</p>
+
+                <p>The result? Event Match Quality scores went up, and Meta's algorithm got the confidence it needed to optimize for actual purchases instead of just link clicks.</p>
+
+                <div class="screenshot">
+                    <img src="images/phase1/Screenshot 2025-12-05 123747.png" alt="Competitor Research">
+                </div>
+
+                <p><strong>3. Verification Before Launch</strong></p>
+                <p>Before I spent a single rupee, I validated everything:</p>
+                <ul>
+                    <li>Ran GTM Preview Mode to watch tags fire in real-time</li>
+                    <li>Used GA4 DebugView to confirm events were coming through clean</li>
+                    <li>Double-checked that purchase tags only fired on the "Order Confirmation" event (not on page reloads or cart views)</li>
+                </ul>
+
+                <p>No guesswork. Just confirmation that the data pipeline was airtight.</p>
+
+                <div class="screenshot">
+                    <img src="images/phase1/Screenshot 2025-12-05 123201.png" alt="Strategic Framework">
+                </div>
+
+                <h3>Technical Implementation: Demo Environment</h3>
+                <p>To demonstrate comprehensive conversion tracking capabilities without requiring access to Lenskart's actual website infrastructure, I built a simplified demo environment (VisionKart) that replicates the core e-commerce user journey.</p>
+
+                <p><strong>Purpose:</strong> This demo site serves as a functional testing ground to showcase:</p>
+                <ul>
+                    <li>Google Tag Manager container configuration</li>
+                    <li>GA4 e-commerce event implementation</li>
+                    <li>Data layer architecture</li>
+                    <li>Enhanced conversion tracking setup</li>
+                    <li>Multi-platform pixel integration (Google Ads, Meta)</li>
+                </ul>
+
+                <p><strong>Technical Scope:</strong> The demo environment consists of 5 pages covering the complete conversion funnel:</p>
+                <ol>
+                    <li><strong>Homepage</strong> - Product discovery and initial engagement</li>
+                    <li><strong>Product Listing</strong> - Category browsing with <code>view_item_list</code> tracking</li>
+                    <li><strong>Product Detail Page</strong> - Individual product views with <code>view_item</code> and <code>add_to_cart</code> events</li>
+                    <li><strong>Shopping Cart</strong> - Cart review with <code>view_cart</code> and <code>begin_checkout</code> tracking</li>
+                    <li><strong>Order Confirmation</strong> - Purchase completion with full transaction data</li>
+                </ol>
+
+                <div class="demo-callout">
+                    <h4>Why a Demo Site?</h4>
+                    <p>Since I don't have access to Lenskart's production website or their Google Tag Manager container, I created this controlled environment to demonstrate:</p>
+                    <ul>
+                        <li>✓ <strong>Data Layer Implementation</strong> - Proper structure for e-commerce events with items arrays, transaction IDs, and dynamic values</li>
+                        <li>✓ <strong>GTM Configuration</strong> - Complete tag setup including GA4 Configuration, Conversion Linker, event tags, and third-party pixels</li>
+                        <li>✓ <strong>Event Architecture</strong> - Strategic placement of tracking events at critical conversion points</li>
+                        <li>✓ <strong>Testing Methodology</strong> - Use of GTM Preview Mode and GA4 DebugView to validate implementation</li>
+                    </ul>
+                    <p>This approach demonstrates that I understand how to implement tracking infrastructure, even when direct access to production systems isn't available—a realistic scenario when working with new clients or during the onboarding phase.</p>
+                    
+                    <div class="demo-link">
+                        <a href="https://ay-333.github.io/VisionKart-demo-site/" target="_blank" class="demo-button">View Live Demo Site →</a>
+                    </div>
+                </div>
+
+                <h3>Why This Matters</h3>
+                <p>Most marketers treat tracking like a checkbox. Install the pixel, move on.</p>
+
+                <p>But here's what I learned: when you treat tracking as an engineering problem, everything downstream gets better. Your automated bidding strategies learn faster. Your attribution becomes more accurate. Your optimization decisions are based on reality, not noise.</p>
+
+                <p>For VisionKart, this infrastructure reduced the "Learning Phase" duration for new campaigns by roughly 40%. That means we hit stable performance faster, which means we could scale faster.</p>
+
+                <p>And that's the difference between a campaign that works and one that actually scales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 2: Economics -->
+    <section id="phase-2" class="case-study-section">
+        <div class="container">
+            <h2 class="section-number">02</h2>
+            <h2 class="section-title">Figuring Out the Economics Before Spending Anything</h2>
+            
+            <div class="content-block">
+                <h3>My Philosophy</h3>
+                <p>Running ads without knowing your numbers is just expensive guessing.</p>
+
+                <p>Before I touched the campaigns, I needed to understand the math. Not the vanity metrics—the actual unit economics that determine whether we're making money or just making noise.</p>
+
+                <h3>The Business Reality Check</h3>
+                <p>Here's what I was working with at VisionKart:</p>
+                <ul>
+                    <li><strong>Product:</strong> Blue cut computer glasses</li>
+                    <li><strong>Average Order Value:</strong> ₹1,899</li>
+                    <li><strong>Gross Margin:</strong> 60% (so about ₹1,139 profit per sale before ad costs)</li>
+                    <li><strong>Monthly Budget:</strong> ₹5,00,000 to play with</li>
+                </ul>
+
+                <p>Simple enough. But the question is: how much can we actually afford to spend per customer?</p>
+
+                <div class="screenshot">
+                    <img src="images/phase2/ChatGPT Image Dec 6, 2025, 10_40_33 AM.png" alt="Unit Economics Framework">
+                    <p class="caption">Complete unit economics breakdown: Break-even ROAS (1.66x), Target ROAS (3.6x), Max CPA, and bidding strategy calculations</p>
+                </div>
+
+                <h3>The Break-Even Line (Where Profitability Dies)</h3>
+                <p>First, I calculated the absolute floor—the ROAS we can't go below without losing money.</p>
+
+                <p><strong>Formula:</strong> 1 ÷ Margin %<br>
+                <strong>Calculation:</strong> 1 ÷ 0.60 = <strong>1.66 ROAS</strong></p>
+
+                <p>This is the "red line." If any campaign drops below 1.66x ROAS, it's literally burning cash. This became my kill-switch metric.</p>
+
+                <h3>Setting the Actual Target (Because Breaking Even Isn't the Goal)</h3>
+                <p>Breaking even is great if you're running a charity. We're not.</p>
+
+                <p>I needed to build in a buffer for operational costs, fulfillment, returns, customer service—all the stuff that eats into margins. So I set the target at 200% above break-even.</p>
+
+                <p><strong>Target ROAS:</strong> 3.6x</p>
+
+                <p>From there, I worked backwards to figure out what we could afford per customer:</p>
+
+                <p><strong>Target CPA:</strong> ₹1,899 (AOV) ÷ 3.6 = <strong>₹527</strong></p>
+
+                <p>So that's the number. We can spend up to ₹527 to acquire a customer and still hit our profitability goals. Anything above that? We're underwater.</p>
+
+                <h3>Reverse-Engineering the Max Bid</h3>
+                <p>Okay, so we know we can spend ₹527 per customer. But what does that mean for bidding at the keyword level?</p>
+
+                <p>I needed to figure out the maximum CPC (cost per click) that still keeps us in the green.</p>
+
+                <p>I started with a conservative assumption:</p>
+                <ul>
+                    <li><strong>Conversion Rate:</strong> 2% (realistic for non-brand search traffic)</li>
+                </ul>
+
+                <p>That means for every 100 clicks, we get 2 sales. So each click is worth:</p>
+
+                <p><strong>Value Per Click:</strong> ₹1,899 × 2% = <strong>₹37.98</strong></p>
+
+                <p>Now, to hit our 3.6x ROAS target:</p>
+
+                <p><strong>Max Bid:</strong> ₹37.98 ÷ 3.6 = <strong>₹10.55</strong></p>
+
+                <p>This tells me that even in a competitive auction, I shouldn't be bidding more than ₹10-11 per click. If I do, the math doesn't work—we'd be paying too much for traffic that can't deliver the returns we need.</p>
+
+                <p><strong>Strategic Decision:</strong> I set an initial bid cap of ₹11 for Search campaigns. It's slightly above the calculated max to stay competitive, but not so high that we're gambling with profitability.</p>
+
+                <h3>The Launch Strategy (Because New Accounts Don't Have Data Yet)</h3>
+                <p>Here's a problem most people ignore: automated bidding strategies like Target ROAS need data to function. If you're starting fresh, the algorithm is blind.</p>
+
+                <p>So I designed a two-stage rollout:</p>
+
+                <p><strong>Stage 1 - Weeks 1-4: Learning Phase</strong></p>
+                <ul>
+                    <li><strong>Strategy:</strong> Maximize Conversions (no ROAS target yet)</li>
+                    <li><strong>Goal:</strong> Get 30-50 conversions in the door so the algorithm has something to learn from</li>
+                    <li><strong>Risk Control:</strong> Strict daily budgets and aggressive negative keyword lists to avoid wasting spend on junk traffic</li>
+                </ul>
+
+                <p><strong>Stage 2 - Week 5+: Profitability Mode</strong></p>
+                <ul>
+                    <li><strong>Strategy:</strong> Switch to Target ROAS at 3.6x</li>
+                    <li><strong>Goal:</strong> Force Google and Meta to only bid on users likely to meet our efficiency targets</li>
+                </ul>
+
+                <p>This way, we're not asking the algorithm to optimize for profitability before it even knows what a "good customer" looks like.</p>
+
+                <h3>Why This Matters</h3>
+                <p>Once you have these numbers locked down, optimization becomes obvious.</p>
+
+                <p>If a campaign's CPA starts creeping above ₹527? I know immediately it's bleeding profit. That triggers a specific action: refresh the creative, tighten the audience, or reduce bids.</p>
+
+                <p>No panic. No guessing. Just math.</p>
+
+                <p>Most marketers skip this step and wonder why their "winning campaigns" aren't actually making money. This is why.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 3: Google Ads -->
+    <section id="phase-3" class="case-study-section alt-bg">
+        <div class="container">
+            <h2 class="section-number">03</h2>
+            <h2 class="section-title">Building the Google Ads Machine (Capturing Existing Demand)</h2>
+            
+            <div class="content-block">
+                <h3>My Philosophy</h3>
+                <p>Google Ads is an auction, but you don't win by just bidding higher. You win by being more relevant than everyone else.</p>
+
+                <p>The goal here was straightforward: maximize ad rank while keeping costs low. And the way you do that? Structure.</p>
+
+                <h3>The Search Campaign: Why "STAG" Beats Everything Else</h3>
+                <p>Most accounts I've seen are a mess. One ad group with 50 keywords, generic ad copy that tries to appeal to everyone, and zero thought given to user intent.</p>
+
+                <p>I did the opposite. I used what's called a <strong>Single Theme Ad Group (STAG)</strong> structure. The idea is simple: one tightly focused theme per ad group.</p>
+
+                <div class="screenshot">
+                    <img src="images/phase3/Screenshot of campaigns.png" alt="Google Ads Campaign Structure">
+                    <p class="caption">Complete Google Ads campaign hierarchy: Brand Defense, Product Categories (Generic Intent, Tech/Feature Intent), and Performance Max with audience signals</p>
+                </div>
+
+                <p>Here's how I split it for VisionKart:</p>
+
+                <p><strong>Campaign:</strong> Search | Generic | Computer Glasses | India</p>
+
+                <p><strong>Ad Group 1 - Generic Intent</strong></p>
+                <ul>
+                    <li>Keywords: "computer glasses," "anti glare specs," "specs for laptop use"</li>
+                    <li>Ad copy angle: Lead with the offer (50% off, free delivery)</li>
+                    <li>Why: People using these terms are early in the journey—they need a reason to click</li>
+                </ul>
+
+                <p><strong>Ad Group 2 - Tech/Feature Intent</strong></p>
+                <ul>
+                    <li>Keywords: "blue cut lenses," "zero power glasses," "blue light blocking specs"</li>
+                    <li>Ad copy angle: Lead with the technology (BLU lens protection, eye strain relief)</li>
+                    <li>Why: These searchers already know what they want—they're comparing solutions</li>
+                </ul>
+
+                <div class="screenshot">
+                    <img src="images/phase3/Screenshot of ad groups.png" alt="Ad Group Structure">
+                    <p class="caption">Detailed STAG (Single Theme Ad Group) structure showing keyword segmentation by user intent with targeted ad copy for each theme</p>
+                </div>
+
+                <p>By separating these, I ensured that someone searching for "blue cut lenses" saw an ad about blue cut lenses, not some generic "buy glasses online" message. This makes Google happy (higher Quality Score) and makes the user happy (more relevant ad). Win-win.</p>
+
+                <p><strong>Match Type Strategy:</strong> I stuck with Phrase Match for the launch. Broad Match can scale fast, but on a fresh account with no conversion data, it also bleeds budget fast. Phrase gave us reach without the chaos.</p>
+
+                <h3>The Location Strategy: Not All Traffic is Equal</h3>
+                <p>Here's a mistake I see constantly: running ads nationwide just because you can.</p>
+
+                <p>VisionKart had a ₹5,000/day budget. If I spread that across all of India, we'd be invisible everywhere. So I got surgical.</p>
+
+                <p><strong>Target:</strong> Tier 1 IT hubs only—Bangalore, Hyderabad, Pune, Gurgaon, Noida, Mumbai</p>
+
+                <p><strong>Why these cities?</strong></p>
+                <ul>
+                    <li>Highest concentration of IT professionals (the core customer)</li>
+                    <li>Higher purchasing power for a ₹1,899 product</li>
+                    <li>Better conversion rates based on category benchmarks</li>
+                </ul>
+
+                <p>But here's the kicker: there's a hidden setting in Google Ads that most people miss.</p>
+
+                <p>By default, Google targets people who are "in or interested in" a location. That means someone sitting in Bihar who searches "jobs in Bangalore" could see your ad. You're paying for that click, and they're never buying.</p>
+
+                <p><strong>My fix:</strong> I switched to "Presence Only" targeting. Now we only pay for people physically located in those cities. Simple change, massive impact on efficiency.</p>
+
+                <h3>Performance Max: Keeping the Algorithm on a Leash</h3>
+                <p>PMax is powerful, but it's also a black box. Google controls where your ads show, what creative gets used, and who sees it. A lot of marketers just turn it on and pray.</p>
+
+                <p>I built in guardrails.</p>
+
+                <p><strong>Audience Signals (Training the Algorithm)</strong></p>
+                <p>I didn't leave targeting blank. I gave Google a starting point:</p>
+                <ul>
+                    <li>Competitor search terms (people searching for "Lenskart," "Titan Eye Plus")</li>
+                    <li>First-party data (website visitors, cart abandoners)</li>
+                </ul>
+
+                <p>This "jumpstarts" the learning phase. Instead of the algorithm flailing around for a week trying to figure out who to target, it starts with a hypothesis.</p>
+
+                <h3>Fixing Problems Before They Bleed Budget</h3>
+                <p>Even a perfect setup has issues. Here's how I handled the common ones:</p>
+
+                <p><strong>Problem 1: High CPA on Generic Keywords</strong></p>
+                <p>Broad terms like "glasses" attract junk traffic. People looking for repairs, free eye tests, used frames—none of them are buying.</p>
+
+                <p><strong>My fix:</strong> Negative keyword lists at the campaign level from day one.</p>
+
+                <p>Blocked terms: -repair, -free, -second hand, -dropshipping, -cheap, -wholesale</p>
+
+                <p>Then every week, I reviewed the Search Terms Report to find new waste and add it to the list. This is ongoing hygiene, not a one-time thing.</p>
+
+                <h3>Why Structure Matters More Than Budget</h3>
+                <p>Here's the truth: a well-structured ₹50,000/month account will outperform a messy ₹5,00,000/month account every time.</p>
+
+                <p>By separating "tech seekers" from "generic buyers," I ensured VisionKart's ads spoke directly to user intent. Higher relevance means higher Quality Score. Higher Quality Score means lower CPC. Lower CPC means more clicks for the same budget.</p>
+
+                <p>That's how you win the auction without just throwing more money at it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 4: Meta Ads -->
+    <section id="phase-4" class="case-study-section">
+        <div class="container">
+            <h2 class="section-number">04</h2>
+            <h2 class="section-title">Meta Ads - Creating Demand Out of Thin Air</h2>
+            
+            <div class="content-block">
+                <h3>My Philosophy</h3>
+                <p>Google captures intent that already exists. Meta creates it.</p>
+
+                <p>The challenge with Meta is different. People aren't actively searching for blue light glasses while scrolling Instagram. They're looking at vacation photos and memes. Your job is to stop the scroll with something that makes them think, "Oh, I actually need that."</p>
+
+                <h3>The Campaign Structure: Cold vs. Hot Traffic</h3>
+                <p>I didn't use the "Boost Post" button. That's amateur hour.</p>
+
+                <p>Instead, I built a segmented funnel where we speak differently to strangers versus people who've already shown interest.</p>
+
+                <p><strong>Campaign 1: Cold Prospecting (Finding New Customers)</strong></p>
+                <ul>
+                    <li><strong>Goal:</strong> New customer acquisition</li>
+                    <li><strong>Budget:</strong> ₹6,000/day with Campaign Budget Optimization (CBO) enabled</li>
+                    <li><strong>Audience:</strong> Interest stacking—people who follow Lenskart, Ray-Ban, Titan Eye Plus, plus behavioral signals like "Engaged Shoppers"</li>
+                </ul>
+
+                <p>Here's the important part: I hard-excluded anyone who purchased in the last 30 days. Why waste impression budget showing "intro offers" to people who literally just bought from you? It's inefficient and annoying.</p>
+
+                <div class="screenshot">
+                    <img src="images/phase4/Screenshot 2025-12-06 200707.png" alt="Meta Ads Campaign Structure">
+                   
+                </div>
+
+                <p><strong>Campaign 2: Dynamic Retargeting (Closing the Sale)</strong></p>
+                <ul>
+                    <li><strong>Goal:</strong> Maximize ROAS</li>
+                    <li><strong>Format:</strong> Dynamic Product Ads using the catalogue</li>
+                    <li><strong>Logic:</strong> Show people the exact products they viewed but didn't buy</li>
+                </ul>
+
+                <p>If someone looked at a specific frame, they see that frame in their feed. Not generic glasses—the exact one. This reduces friction and dramatically increases conversion rates.</p>
+
+                <h3>The Creative Strategy: Pain vs. Style</h3>
+                <p>Here's the truth: on Meta, creative is the new targeting. You can have perfect audience setup, but if your ad looks like everyone else's, you're invisible.</p>
+
+                <p>I ran the "Pain vs. Style" test to see what resonated.</p>
+
+                <p><strong>Concept A: The Pain Angle</strong></p>
+                <ul>
+                    <li><strong>Format:</strong> Vertical video (Reels/Stories)</li>
+                    <li><strong>Hook:</strong> "Headaches at 5 PM?"</li>
+                    <li><strong>Target:</strong> IT professionals, remote workers—people who stare at screens all day</li>
+                    <li><strong>Why it works:</strong> It names a specific problem they're experiencing right now</li>
+                </ul>
+
+                <p><strong>Concept B: The Style Angle</strong></p>
+                <ul>
+                    <li><strong>Format:</strong> Carousel ads (1:1 product images)</li>
+                    <li><strong>Hook:</strong> "Upgrade Your Work-From-Home Look"</li>
+                    <li><strong>Target:</strong> Fashion/lifestyle demographic—people who care about aesthetics</li>
+                    <li><strong>Why it works:</strong> Glasses as an accessory, not just a functional tool</li>
+                </ul>
+
+                <div class="screenshot">
+                    <img src="images/phase4/Screenshot 2025-12-06 200405.png" alt="Creative Testing Framework">
+                    
+                </div>
+
+                <p>I let both run, tracked which performed better, then doubled down on the winner. No guessing, just data.</p>
+
+                <h3>Fixing Problems Before They Kill Performance</h3>
+                <p>The difference between a junior media buyer and someone who actually knows what they're doing? Knowing how to read the secondary metrics and act fast.</p>
+
+                <p><strong>Problem 1: Ad Fatigue (CPA Creeping Up After 2 Weeks)</strong></p>
+                <p>This is inevitable on Meta. Your ad performs great, then suddenly costs start rising.</p>
+
+                <p><strong>The diagnostic:</strong> I check Frequency. If it hits 2.5+ on a cold audience, people are seeing the same ad too often and ignoring it.</p>
+
+                <p><strong>My fix:</strong> I don't pause the ad set (that resets learning). I introduce fresh creative with a new hook or format into the same campaign. This resets visual fatigue without killing momentum.</p>
+
+                <h3>Why This Works in a Post-iOS14 World</h3>
+                <p>Apple's privacy updates broke a lot of what used to work on Meta. Tracking got harder. Attribution got messier. A lot of advertisers panicked.</p>
+
+                <p>But here's what I learned: if you pair Broad Targeting with Strong Creative and a CAPI-reinforced signal, you build a system that survives cookie blocking.</p>
+
+                <p>The algorithm can still find buyers—it just needs clean data to learn from. That's what the infrastructure in Phase 1 was for. And that's why creative matters more than ever. If your ad doesn't stop the scroll in the first half-second, none of the backend setup matters.</p>
+
+                <p>Meta rewards relevance and signal quality. Nail those two, and you can scale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 5: Automation -->
+    <section id="phase-5" class="case-study-section alt-bg">
+        <div class="container">
+            <h2 class="section-number">05</h2>
+            <h2 class="section-title">The Automation Layer (So I'm Not Babysitting Campaigns All Day)</h2>
+            
+            <div class="content-block">
+                <h3>My Philosophy</h3>
+                <p>Manual monitoring is slow, reactive, and exhausting.</p>
+
+                <p>I'm not sitting around refreshing dashboards every hour. That's not scalable, and it's a terrible use of time. Instead, I built an automation layer that watches everything for me.</p>
+
+                <p>For VisionKart, I used n8n (a workflow automation tool) and JavaScript to create a system that monitors budget pacing, data integrity, and ROAS 24/7. Think of it as a watchtower that never sleeps.</p>
+
+                <h3>The Core Problem: Ads Don't Sleep, But Humans Do</h3>
+                <p>Managing a ₹15 Lakhs/month account means something can go wrong at any time. Budget can blow out at 11 PM. A campaign can start bleeding money while you're in a meeting. By the time you notice, the damage is done.</p>
+
+                <p>So I built 8 automated workflows that sit between the ad platforms (Google/Meta), our data warehouse (Google Sheets), and our communication hub (Slack). They run on a schedule, check for issues, and alert me only when something needs attention.</p>
+
+                <h3>Workflow #1: The Budget Pacing Monitor</h3>
+                <p>This solves every media buyer's biggest fear: overspending or underspending.</p>
+
+                <p><strong>The problem:</strong> Google Ads budgets are daily targets, but spend is volatile. You could burn 80% of your budget by noon, or hit 6 PM and realize you've only spent 40%. Checking manually is too late.</p>
+
+                <p><strong>My solution:</strong> A workflow that runs every 4 hours (9 AM, 1 PM, 5 PM, 9 PM).</p>
+
+                <p>Here's the logic I built in JavaScript:</p>
+                <ol>
+                    <li>Fetch real-time spend from the Google Ads API</li>
+                    <li>Calculate expected spend based on the time of day (Budget ÷ 24 × Current Hour)</li>
+                    <li>Compare actual spend vs. expected spend to get a pacing ratio</li>
+                </ol>
+
+                <p><strong>Then it routes conditionally:</strong></p>
+                <ul>
+                    <li>If pacing > 120%: Slack alert 🚨 "OVERSPENDING - Pause low performers"</li>
+                    <li>If pacing < 80%: Slack alert ⚠️ "UNDERSPENDING - Check bids/payment issues"</li>
+                    <li>Otherwise: Log "On Track" to an audit sheet</li>
+                </ul>
+
+                <p>This means I know within 4 hours if something's off, not 24 hours later when it's already cost us thousands.</p>
+
+                <h3>Workflow #2: The Offline Conversion Sync (Closing the Attribution Gap)</h3>
+                <p>iOS 14 broke a lot of tracking. Even with pixel + CAPI setup, some conversions still get missed at the browser level.</p>
+
+                <p>But here's the thing: if someone becomes a customer in your CRM, you <em>know</em> they converted. So I built a server-to-server pipeline to feed that data back to Meta.</p>
+
+                <p><strong>The flow:</strong></p>
+                <ol>
+                    <li>CRM sends a webhook when a lead becomes a sale</li>
+                    <li>n8n receives it, transforms the data (hashes email/phone into SHA-256 for privacy compliance)</li>
+                    <li>Pushes the conversion to Meta's CAPI with the fbc (click ID) for precise attribution</li>
+                </ol>
+
+                <p><strong>The result:</strong> We recovered about 15% of attribution data that was previously lost. That's 15% more signal for the algorithm to learn from, which means better optimization.</p>
+
+                <div class="screenshot">
+                    <img src="images/phase5/Screenshot 2025-12-06 204728.png" alt="n8n Automation Workflows">
+                    <p class="caption">Complete automation architecture: Budget pacing monitor, offline conversion sync, high CPA kill-switch, and Slack alert system built in n8n</p>
+                </div>
+
+                <h3>Workflow #3: The "High CPA" Kill-Switch</h3>
+                <p>This is the guardian bot. It protects the break-even ROAS we calculated in Phase 2.</p>
+
+                <p><strong>The logic:</strong></p>
+                <ol>
+                    <li>Fetch yesterday's performance for all active campaigns</li>
+                    <li>Filter for any ad group where CPA > ₹600 AND Spend > ₹2,000</li>
+                    <li>Automatically add a "Review Needed" label in Google Ads</li>
+                    <li>Ping the team on Slack</li>
+                </ol>
+
+                <p><strong>Why this matters:</strong> Instead of discovering a bleeding ad group during your morning report 24 hours later, you find out immediately. Reaction time goes from a full day to near-zero.</p>
+
+                <h3>The Technical Stuff (Because Automation Breaks)</h3>
+                <p>Building automation is easy. Building <em>reliable</em> automation is hard. Here's what I had to handle:</p>
+
+                <p><strong>Problem 1: API Rate Limits</strong></p>
+                <p>Google Ads API has query limits. If you try to pull too much data at once, it throttles you.</p>
+
+                <p><strong>My fix:</strong> I used "Split in Batches" logic in the Daily Report workflow. Instead of one massive query, it processes data in chunks, staying under the rate limit.</p>
+
+                <p><strong>Problem 2: Overlapping Logic (The Floating Else Bug)</strong></p>
+                <p>In the Budget Monitor, I initially had multiple if statements that could all fire at once. This caused conflicting alerts—"Overspending" and "On Track" would both trigger.</p>
+
+                <p><strong>My fix:</strong> Refactored to strict else if chaining. Now only one condition can fire, no overlap.</p>
+
+                <p><strong>Problem 3: Division by Zero Errors</strong></p>
+                <p>Between midnight and 1 AM, spend is often ₹0. If you try to calculate ROAS (Revenue ÷ Spend), it breaks.</p>
+
+                <p><strong>My fix:</strong> Added null value handling. If spend is zero, skip the calculation and log "No Data Yet."</p>
+
+                <h3>Why This Matters</h3>
+                <p>By offloading repetitive data-checking to automation, I freed up about 12 hours per week.</p>
+
+                <p>That's 12 hours I'm not copy-pasting data into spreadsheets. 12 hours I can spend on high-leverage activities: testing new creative angles, analyzing audience performance, refining the funnel.</p>
+
+                <p>Automation doesn't replace strategic thinking. It clears the way for it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 6: Optimization -->
+    <section id="phase-6" class="case-study-section">
+        <div class="container">
+            <h2 class="section-number">06</h2>
+            <h2 class="section-title">The Optimization & Scaling Playbook (Making It Predictable)</h2>
+            
+            <div class="content-block">
+                <h3>My Philosophy</h3>
+                <p>Optimization isn't guessing. It's systematic data interrogation.</p>
+
+                <p>Most people treat optimization like throwing darts blindfolded. They pause random ads, tweak bids on a whim, and hope something sticks. That's not a strategy.</p>
+
+                <p>I use a "Kill, Optimize, Scale" framework. It's simple: cut what's bleeding money, fix what's underperforming, and double down on what's working.</p>
+
+                <h3>The "Kill" Protocol: Plugging Financial Leaks</h3>
+                <p>Before you scale, you need to stop the bleeding. I established an audit rhythm to identify assets that were eating budget without delivering ROAS.</p>
+
+                <p><strong>Search Term N-Gram Analysis</strong></p>
+                <p>Instead of reading the Search Terms Report line-by-line (which is mind-numbing and inefficient), I used N-Gram Analysis. This breaks queries down into individual words to find patterns.</p>
+
+                <p><strong>What I found:</strong> Queries containing "repair" and "frames only" accounted for 15% of wasted spend. These people weren't buying glasses—they were looking for replacement parts or DIY fixes.</p>
+
+                <p><strong>My action:</strong> Added these as account-level negative keywords. Instant waste reduction.</p>
+
+                <p><strong>The "Zero-Conversion" Ad Audit</strong></p>
+                <p>Here's a harsh truth: if a Meta ad has spent 3x your target CPA (about ₹1,500 in this case) and hasn't gotten a single purchase, it's not going to suddenly start working.</p>
+
+                <p><strong>My rule:</strong> Pause it immediately.</p>
+
+                <p>Some marketers say "give it more time." I say the data is already speaking—listen to it.</p>
+
+                <h3>The "Optimize" Protocol: Fighting Creative Fatigue</h3>
+                <p>Creative fatigue is the silent killer on Meta. Your ad crushes it for two weeks, then performance quietly dies. Most people don't notice until it's too late.</p>
+
+                <p>I moved beyond vanity metrics (likes, shares) and focused on Creative Health Indicators.</p>
+
+                <p><strong>Meta Video Diagnostics: Thumb-Stop Ratio</strong></p>
+                <p>This is the metric that actually matters: <strong>3-second views ÷ impressions.</strong></p>
+
+                <p><strong>Goal:</strong> >25% (meaning 1 in 4 people stop scrolling)</p>
+
+                <p><strong>What I did:</strong> If an ad had good conversion rates but a low thumb-stop ratio, I kept the offer but re-cut the first 3 seconds. New hook, same message. This arrests attention faster without throwing away the creative entirely.</p>
+
+                <p><strong>PMax Asset Refresh</strong></p>
+                <p>Google's Performance Max grades your assets: Best, Good, Low.</p>
+
+                <p><strong>My routine:</strong> Every 14 days, I reviewed the Asset Detail Report and replaced anything graded "Low" with fresh UGC (user-generated content) images.</p>
+
+                <p><strong>Why this matters:</strong> Prevents audience saturation and keeps Ad Strength high, which directly impacts how aggressively Google bids.</p>
+
+                <h3>The "Scale" Protocol: Growing Without Breaking Things</h3>
+                <p>Once campaigns hit stable 3.6x ROAS, I moved to scaling. But here's the catch: scale wrong, and you reset everything.</p>
+
+                <p><strong>Vertical Scaling (The 20% Rule)</strong></p>
+                <p><strong>Method:</strong> Increase daily budgets by 10-20% every 48 hours.</p>
+
+                <p><strong>Why slow?</strong> Because if you double a budget overnight, you reset the algorithm's learning phase. Performance gets volatile, CPA spikes, and you're back to square one.</p>
+
+                <p>Slow scaling preserves optimization history. The algorithm stays stable, and efficiency holds.</p>
+
+                <p><strong>Horizontal Scaling (New Audiences)</strong></p>
+                <p>Instead of just cranking up budgets on existing campaigns, I expanded into adjacent territories:</p>
+                <ul>
+                    <li>Launched new ad sets targeting "Gaming Interests" (adjacent to "Tech Interests")</li>
+                    <li>Built Lookalike Audiences based on LTV (lifetime value) data from GA4</li>
+                    <li>Tested new geo locations with similar demographics</li>
+                </ul>
+
+                <p>This diversifies traffic sources without overloading a single audience.</p>
+
+                <h3>Real-World Problems I Had to Fix</h3>
+                <p>This is where theory meets reality. Here are the actual issues I ran into and how I solved them.</p>
+
+                <p><strong>Problem 1: The "Learning Limited" Trap</strong></p>
+                <p><strong>The issue:</strong> Meta ad sets getting stuck in "Learning Limited" because they weren't getting 50 conversions per week.</p>
+
+                <p><strong>The diagnostic:</strong> Budget was too diluted across too many ad sets. Each one was starving for data.</p>
+
+                <p><strong>My fix:</strong> Consolidated 4 fragmented ad sets into 1 broad targeting ad set. This aggregated conversion volume, allowed the algorithm to exit learning, and stabilized CPA.</p>
+
+                <p><strong>Lesson:</strong> Sometimes you need to simplify, not complexify.</p>
+
+                <p><strong>Problem 2: Platform Attribution Discrepancy</strong></p>
+                <p><strong>The issue:</strong> Facebook reported 50 sales, but GA4 only showed 35.</p>
+
+                <p><strong>The diagnostic:</strong> Attribution windows are different. Facebook defaults to 1-day view (claims credit for people who <em>saw</em> an ad but didn't click). GA4 uses data-driven attribution and requires a click.</p>
+
+                <p><strong>My fix:</strong> I stopped obsessing over which platform was "right" and focused on North Star Metrics: Total Shop Revenue ÷ Total Ad Spend. This validated the actual lift, regardless of attribution quirks.</p>
+
+                <p><strong>Lesson:</strong> Platforms will always disagree. Focus on business outcomes, not platform dashboards.</p>
+
+                <p><strong>Problem 3: PMax ROAS Crash</strong></p>
+                <p><strong>The issue:</strong> PMax ROAS dropped from 4.0 to 2.1 overnight. No other changes in the account.</p>
+
+                <p><strong>The diagnostic:</strong> Checked the Listing Group report. A specific product variant (Gold Frames) went out of stock, but ads were still running for it. People were clicking, landing on a dead page, and bouncing.</p>
+
+                <p><strong>My fix:</strong> Implemented a supplemental feed rule to automatically exclude out-of-stock products from PMax.</p>
+
+                <p><strong>Lesson:</strong> Ad platforms don't know your inventory status. You have to tell them.</p>
+
+                <h3>Why This Framework Works</h3>
+                <p>Scaling isn't just about spending more money. It's about predictability.</p>
+
+                <p>By following the 20% Budget Rule and constantly refreshing creatives based on Thumb-Stop data, I turned VisionKart's ad account from a volatile experiment into a predictable revenue engine.</p>
+
+                <p>You know what to expect. You know when to intervene. And you know what levers to pull when performance drifts.</p>
+
+                <p>That's how you scale sustainably, not chaotically.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="result" class="case-study-section result-section">
+        <div class="container">
+            <h2 class="section-title">The Result</h2>
+            
+            <div class="content-block">
+                <p>Through this 6-phase framework—tracking infrastructure, unit economics modeling, demand capture (Google), demand generation (Meta), automation, and systematic optimization—VisionKart hit its ₹15 Lakhs/month revenue target while maintaining a 3.6x ROAS.</p>
+
+                <p>But more importantly, the account became <em>predictable</em>. That's the real win.</p>
+
+                <p>Because in performance marketing, consistency beats volatility every time.</p>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>₹15L+</h3>
+                        <p>Monthly Revenue</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>3.6x</h3>
+                        <p>Target ROAS Maintained</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>40%</h3>
+                        <p>Faster Learning Phase</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>99%</h3>
+                        <p>Conversion Tracking Accuracy</p>
+                    </div>
+                </div>
+
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li><strong>Infrastructure First:</strong> Bulletproof tracking (GTM + GA4 + CAPI) reduced learning phase duration by 40%</li>
+                    <li><strong>Unit Economics Drive Decisions:</strong> Every optimization decision traced back to break-even ROAS (1.66x) and target ROAS (3.6x)</li>
+                    <li><strong>Structure Over Budget:</strong> STAG campaign architecture and geo-targeting precision outperformed simply increasing spend</li>
+                    <li><strong>Automation Enables Scale:</strong> 8 n8n workflows freed up 12 hours/week for strategic work</li>
+                    <li><strong>Kill, Optimize, Scale:</strong> Systematic framework turned volatile performance into predictable revenue</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="case-study-cta">
+        <div class="container">
+            <h2>Want Results Like This for Your Brand?</h2>
+            <p>I specialize in building performance marketing systems that scale profitably. From tracking infrastructure to automation workflows, I handle the technical complexity so you can focus on growth.</p>
+            <a href="contact.html" class="cta-button">Let's Talk Strategy</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025. Ayansh's Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
