@@ -84,24 +84,20 @@
     </section>
 
     
-
-    <!-- Stats Section starts here -->
+   <!-- Stats Section starts here -->
     <!-- SECTION 2: VENUS METRICS DASHBOARD -->
-    <section class="venus-section" id="venus-stats">
-        
-        <!-- Interactive Network Canvas (Background Connections) -->
-        <canvas id="network-canvas"></canvas>
+    <section class="venus-section" id="venus-stats">     
 
         <div class="container relative-z">
-            <div class="metrics-grid">
+           <div class="metrics-grid">
                 
                 <!-- Card 1 -->
-                <div class="metric-card tilt-card" data-tilt>
-                    <div class="card-border-glow"></div>
+                <div class="metric-card">
                     <div class="card-content">
                         <div class="metric-icon">📊</div>
                         <div class="metric-value-wrapper">
-                            <span class="metric-number" data-target="2">0</span>
+                            <!-- Removed data-target, added static number -->
+                            <span class="metric-number">02</span>
                             <div class="pulse-ring"></div>
                         </div>
                         <h3 class="metric-label">Full-Stack Campaigns</h3>
@@ -110,12 +106,12 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="metric-card tilt-card" data-tilt>
-                    <div class="card-border-glow"></div>
+                <div class="metric-card">
                     <div class="card-content">
                         <div class="metric-icon">🤖</div>
                         <div class="metric-value-wrapper">
-                            <span class="metric-number" data-target="8">0</span>
+                            <!-- Removed data-target, added static number -->
+                            <span class="metric-number">08</span>
                             <div class="pulse-ring"></div>
                         </div>
                         <h3 class="metric-label">n8n Workflows</h3>
@@ -124,12 +120,13 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="metric-card tilt-card" data-tilt>
-                    <div class="card-border-glow"></div>
+               <div class="metric-card">
+                    
                     <div class="card-content">
                         <div class="metric-icon">🏷️</div>
                         <div class="metric-value-wrapper">
-                            <span class="metric-number" data-target="30">0</span>
+                            <!-- Removed data-target, added static number -->
+                            <span class="metric-number">30</span>
                             <span class="metric-suffix">+</span>
                             <div class="pulse-ring"></div>
                         </div>
@@ -139,18 +136,21 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="metric-card tilt-card" data-tilt>
-                    <div class="card-border-glow"></div>
+               <div class="metric-card">
+                   
                     <div class="card-content">
                         <div class="metric-icon">⏰</div>
                         <div class="metric-value-wrapper">
-                            <span class="metric-number" data-target="12">0</span>
+                            <!-- Removed data-target, added static number -->
+                            <span class="metric-number">12</span>
                             <div class="pulse-ring"></div>
                         </div>
                         <h3 class="metric-label">Hours Saved/Wk</h3>
                         <div class="metric-detail">Eliminating manual labor via automation</div>
                     </div>
                 </div>
+
+            </div>
 
             </div>
         </div>
@@ -633,7 +633,7 @@
                     <div class="cert-shine"></div>
                     <div class="cert-border-glow"></div>
                     <div class="cert-image-wrapper">
-                        <img src="mages/digital-marketing.png" alt="Attract & Engage Customers" loading="lazy">
+                        <img src="images/digital-marketing.png" alt="Attract & Engage Customers" loading="lazy">
                         <div class="cert-overlay">
                             <span class="cert-issuer">Google Career Certificates</span>
                         </div>
@@ -917,127 +917,7 @@ if (canvas && window.innerWidth > 768) { // Only run on desktop
         animateParticles();
     }
 });
-// =========================================
-    // SECTION 2: VENUS METRICS LOGIC (Fixed Names)
-    // =========================================
 
-    // 1. COUNTER ANIMATION
-    // We use specific names (venusSection) to avoid conflicts with previous code
-    const venusSection = document.querySelector('.venus-section');
-    const venusNumbers = document.querySelectorAll('.metric-number');
-    let venusStarted = false;
-
-    const venusObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !venusStarted) {
-            venusStarted = true;
-            venusNumbers.forEach((num) => {
-                const target = +num.getAttribute('data-target');
-                const duration = 2000; 
-                const start = performance.now();
-
-                function step(currentTime) {
-                    const elapsed = currentTime - start;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const ease = 1 - Math.pow(1 - progress, 4); // Ease Out
-                    const currentVal = Math.floor(ease * target);
-                    
-                    // Add leading zero if < 10
-                    num.innerText = currentVal < 10 ? `0${currentVal}` : currentVal;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(step);
-                    } else {
-                        num.innerText = target < 10 ? `0${target}` : target;
-                    }
-                }
-                requestAnimationFrame(step);
-            });
-        }
-    }, { threshold: 0.5 });
-
-    if (venusSection) venusObserver.observe(venusSection);
-
-
-    // 2. 3D TILT EFFECT (Targeting specific tilt-cards)
-    const venusCards = document.querySelectorAll('.tilt-card');
-
-    venusCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            // Calculate rotation based on mouse position
-            const rotateX = ((y - centerY) / centerY) * -10; 
-            const rotateY = ((x - centerX) / centerX) * 10;
-
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
-        });
-    });
-
-
-    // 3. NETWORK LINES (Connecting the cards)
-    const netCanvas = document.getElementById('network-canvas');
-if(netCanvas && venusSection && window.innerWidth > 768)  {
-        const netCtx = netCanvas.getContext('2d');
-        
-        function resizeNet() {
-            netCanvas.width = window.innerWidth;
-            netCanvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeNet);
-        resizeNet();
-
-        function animateNetwork() {
-            netCtx.clearRect(0, 0, netCanvas.width, netCanvas.height);
-            
-            // Get positions of all cards relative to the canvas
-            const cardRects = Array.from(venusCards).map(c => {
-                const r = c.getBoundingClientRect();
-                const scrollY = window.scrollY;
-                const sectionTop = venusSection.offsetTop;
-                return {
-                    x: r.left + r.width / 2,
-                    y: (r.top + scrollY) - sectionTop + r.height / 2 
-                };
-            });
-
-            // Draw Orange Lines
-            netCtx.strokeStyle = 'rgba(255, 107, 53, 0.3)'; 
-            netCtx.lineWidth = 1;
-            netCtx.beginPath();
-
-            if (cardRects.length === 4) {
-                // Draw Box Connection
-                netCtx.moveTo(cardRects[0].x, cardRects[0].y);
-                netCtx.lineTo(cardRects[1].x, cardRects[1].y);
-                netCtx.lineTo(cardRects[3].x, cardRects[3].y);
-                netCtx.lineTo(cardRects[2].x, cardRects[2].y);
-                netCtx.closePath();
-                netCtx.stroke();
-                
-                // Draw Cross Connection
-                netCtx.beginPath();
-                netCtx.moveTo(cardRects[0].x, cardRects[0].y);
-                netCtx.lineTo(cardRects[3].x, cardRects[3].y);
-                netCtx.stroke();
-            }
-
-            requestAnimationFrame(animateNetwork);
-        }
-        
-        // Only run animation when section is visible (Performance)
-        const observerCanvas = new IntersectionObserver((entries) => {
-            if(entries[0].isIntersecting) animateNetwork();
-        });
-        observerCanvas.observe(venusSection);
-    }
     /* --- ADD THIS TO YOUR EXISTING SCRIPT TAG --- */
 
     // =========================================

@@ -63,7 +63,22 @@ body:has(a:hover, button:hover, .workflow-card:hover) .cursor-outline {
 .tech-logo { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); position: relative; z-index: 2; }
 .logo-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: 120%; background: radial-gradient(circle, var(--accent-orange) 0%, transparent 70%); opacity: 0.4; filter: blur(10px); animation: pulse-glow 2s infinite alternate; }
 
-.nav-menu { display: flex; list-style: none; gap: 2rem; align-items: center; }
+.nav-menu { display: flex; list-style: none; gap: 2rem; align-items: center; } 
+/* Add this after the existing .nav-menu styles */
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* You can later add a hamburger menu */
+    }
+    
+    .nav-container {
+        justify-content: center; /* Center logo on mobile */
+    }
+    
+    .logo-text {
+        font-size: 1.2rem; /* Smaller logo text */
+    }
+}
 .nav-link { color: var(--text-secondary); text-decoration: none; transition: color 0.3s; }
 .nav-link:hover { color: var(--text-primary); }
 .nav-cta { padding: 0.5rem 1.2rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; border-radius: 50px; transition: 0.3s; }
@@ -309,8 +324,7 @@ body:has(a:hover, button:hover, .workflow-card:hover) .cursor-outline {
 .section-title { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 0.5rem; }
 .section-subtitle { color: var(--text-secondary); }
 
-.stats { background: var(--bg-panel); border-top: 1px solid var(--border-color);
-border-bottom: 1px solid var(--border-color); padding: 3rem 0; }
+.stats { background: var(--bg-panel); border-y: 1px solid var(--border-color); padding: 3rem 0; }
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; }
 .stat-icon { font-size: 2rem; margin-bottom: 0.5rem; }
 .stat-number { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: white; }
@@ -382,6 +396,25 @@ border-bottom: 1px solid var(--border-color); padding: 3rem 0; }
 .skill-card p { font-size: 0.9rem; color: var(--text-secondary); }
 
 .footer { padding: 5rem 0; text-align: center; border-top: 1px solid var(--border-color); margin-top: 4rem; }
+@media (max-width: 768px) {
+    .footer h1 {
+        font-size: 1.8rem;
+    }
+    
+    .footer h2 {
+        font-size: 1.5rem;
+    }
+    
+    .footer-email {
+        font-size: 1.2rem !important;
+        word-break: break-all; /* Prevent overflow */
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
 .footer h2 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem; }
 .footer-email { font-size: 2.5rem; font-family: var(--font-display); color: var(--text-secondary); text-decoration: none; transition: 0.3s; display: block; margin-bottom: 3rem; }
 .footer-email:hover { color: var(--accent-orange); }
@@ -1148,12 +1181,10 @@ body:has(a:hover, button:hover, .card:hover) .cursor-halo {
     font-weight: 800;
     background: linear-gradient(135deg, #fff 20%, var(--accent-orange) 100%);
     -webkit-background-clip: text;
-    background-clip: text; /* Add standard property */
     -webkit-text-fill-color: transparent;
     line-height: 1;
     margin-bottom: 0.5rem;
-    /* text-shadow removed - doesn't work with gradient text */
-    filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.3)); /* Use this instead for glow */
+    text-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
 }
 
 .metric-suffix {
@@ -1233,10 +1264,38 @@ body:has(a:hover, button:hover, .card:hover) .cursor-halo {
 }
 
 /* Mobile */
+/* REPLACE the existing mobile query for .metrics-grid */
+
 @media (max-width: 768px) {
-    .metrics-grid { grid-template-columns: 1fr; gap: 20px; }
-    .metric-number { font-size: 3.5rem; }
-    .venus-section { padding: 4rem 20px; }
+    .metrics-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        padding: 0 20px; /* Add horizontal padding */
+    }
+    
+    .metric-number { 
+        font-size: 3rem; /* Smaller on mobile */
+    }
+    
+    .metric-card {
+        padding: 30px 20px; /* Less padding on mobile */
+    }
+}
+
+/* Add this AFTER the existing .venus-section styles */
+
+@media (max-width: 768px) {
+    .venus-section {
+        min-height: auto;
+        padding: 4rem 1rem;
+    }
+    
+    .venus-section::after {
+        animation: none; /* Disable Ken Burns on mobile for performance */
+        transform: scale(1);
+        background-size: cover;
+        background-position: center;
+    }
 }
 /* =========================================
    SECTION 3: PREMIUM CAMPAIGN ARCHITECTURE
@@ -1303,9 +1362,7 @@ body:has(a:hover, button:hover, .card:hover) .cursor-halo {
 .gradient-text-premium {
     background: linear-gradient(to right, #ff8c42, #ff3c00);
     -webkit-background-clip: text;
-    background-clip: text; /* Add standard property */
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 8px rgba(255, 60, 0, 0.4)); /* Optional glow effect */
 }
 
 .premium-subtitle {
@@ -1731,4 +1788,306 @@ body:has(a:hover, button:hover, .card:hover) .cursor-halo {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .nav-menu { display: none; } /* Hides desktop menu on mobile */
+}
+/* =========================================
+   SECTION 5.5: HALL OF CREDENTIALS
+   ========================================= */
+
+.cert-section {
+    position: relative;
+    padding: 8rem 0;
+    overflow: hidden;
+    /* Nebula Gradient Background */
+    background: radial-gradient(circle at 50% 50%, #1a0b2e 0%, #050505 100%);
+    border: none !important;
+    margin-top: -2px !important;
+    z-index: 2;
+}
+
+/* Seamless Transition Overlay */
+.cert-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #000000 0%, transparent 20%, transparent 80%, rgba(0,0,0,0.9) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Responsive Grid for 5 Items */
+.cert-grid {
+    display: grid;
+    /* This automatically arranges cards. On desktop it fits 3 per row, or 2 depending on width */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    perspective: 1000px;
+    position: relative;
+    z-index: 2;
+}
+
+/* THE HOLOGRAPHIC CARD */
+.cert-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cert-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.2); /* Purple Glow */
+    border-color: rgba(139, 92, 246, 0.5);
+    z-index: 10;
+}
+
+/* Rotating Border Effect */
+.cert-border-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: conic-gradient(from 0deg, transparent, #8b5cf6, transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotate-border 6s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 3;
+}
+.cert-card:hover .cert-border-glow { opacity: 1; }
+
+/* Shine Effect */
+.cert-shine {
+    position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+    transform: skewX(-20deg); pointer-events: none; transition: 0.5s; z-index: 4;
+}
+.cert-card:hover .cert-shine { left: 150%; transition: 0.8s ease-in-out; }
+
+/* Image Styling */
+.cert-image-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    transform: translateZ(10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    aspect-ratio: 4/3; /* Keeps all certificates uniform size */
+}
+
+.cert-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the box cleanly */
+    object-position: top center;
+    transition: transform 0.5s ease;
+}
+
+.cert-card:hover img { transform: scale(1.05); }
+
+/* Overlay Label */
+.cert-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 20px 10px 10px;
+    opacity: 0;
+    transition: 0.3s;
+}
+.cert-card:hover .cert-overlay { opacity: 1; }
+
+.cert-issuer {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffaa00; /* Gold */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Text Info */
+.cert-info {
+    text-align: center;
+    transform: translateZ(20px);
+}
+
+.cert-info h4 {
+    font-family: var(--font-display);
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.cert-info .cert-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .cert-grid { grid-template-columns: 1fr; }
+}
+/* =========================================
+   CONTACT MODAL (LIGHTBOX)
+   ========================================= */
+
+/* The Dark Backdrop */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px); /* Strong cinematic blur */
+    z-index: 10000; /* On top of everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none; /* Click-through when hidden */
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* When Active (Visible) */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* The Image Container */
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Pop-up Animation */
+.modal-overlay.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+/* The Image Itself */
+.modal-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 85vh; /* Keep it within screen */
+    object-fit: contain;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Close Button (X) */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: #ff5e00;
+    transform: rotate(90deg);
+}
+/* =========================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* Disable expensive animations */
+    .card-border-glow,
+    .card-shine,
+    .pulse-ring {
+        display: none !important; /* Remove animated borders on mobile */
+    }
+    
+    /* Disable parallax on mobile */
+    .venus-section,
+    #projects,
+    #automation,
+    #skills,
+    .hero {
+        background-attachment: scroll !important; /* Fixed parallax kills mobile performance */
+    }
+    
+    /* Disable canvas animations on mobile */
+    #particle-canvas,
+    #network-canvas,
+    .project-bg-particles {
+        display: none !important;
+    }
+    
+    /* Simplify hover effects */
+    .metric-card:hover {
+        transform: none;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+}
+/* =========================================
+   CLEAN & SIMPLE GLASS CARDS (No 3D, No Rotate)
+   ========================================= */
+
+/* Shared Styles for Metrics and Project Cards */
+.metric-card, 
+.premium-card,
+.cert-card {
+    position: relative;
+    background: rgba(15, 15, 20, 0.6); /* Clean Dark Glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+    border-radius: 20px;
+    padding: 2rem;
+    cursor: pointer;
+    overflow: hidden;
+    
+    /* Simple Transition for Hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    
+    /* Ensure no 3D distortion */
+    transform-style: flat !important; 
+    transform: none !important;
+}
+
+/* Simple Hover Effect: Lift Up & Glow Border */
+.metric-card:hover, 
+.premium-card:hover,
+.cert-card:hover {
+    transform: translateY(-5px) !important; /* Gentle lift */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent-orange); /* Border turns orange */
+    background: rgba(15, 15, 20, 0.8); /* Slightly darker on hover */
+}
+
+/* Hide any leftover glares or rotating elements via CSS just in case */
+.card-border-glow, 
+.card-shine,
+.pulse-ring {
+    display: none !important;
 }
